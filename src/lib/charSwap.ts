@@ -11,7 +11,7 @@ export function charSwap(
 	const [ox, oy] = style.transformOrigin.split(" ").map(parseFloat);
 	const dx = from.left + (from.width * ox) / to.width - (to.left + ox);
 	const dy = from.top + (from.height * oy) / to.height - (to.top + oy);
-	console.log(node.textContent + " is being moved at index " + index);
+	// console.log(node.textContent + " is being moved at index " + index);
 	flipper = !flipper;
 
 	return {

@@ -2,12 +2,7 @@
 	import { get } from "svelte/store";
 	import type { Writable } from "svelte/store";
 	import type { CharObj } from "./extras.svelte";
-
-	function wait(delay: number) {
-		return new Promise((resolve) => {
-			setTimeout(resolve, delay);
-		});
-	}
+	import { wait } from "./extras.svelte";
 
 	export async function bubbleSort(store: Writable<CharObj[]>) {
 		// get the length of the array
