@@ -5,6 +5,9 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bogoSort(store: Writable<CharObj[]>) {
+	if (get(currentAlgorithm) == 'bogoSort') { // If already doing bogo, return
+		return;
+	}
 	currentAlgorithm.set('bogoSort');
 
 	// get the length of the array

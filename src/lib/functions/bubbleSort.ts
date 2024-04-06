@@ -4,6 +4,9 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bubbleSort(store: Writable<CharObj[]>) {
+	if (get(currentAlgorithm) == 'bubbleSort') { // If already doing bubble, return
+		return;
+	}
 	currentAlgorithm.set('bubbleSort');
 
 	// get the length of the array

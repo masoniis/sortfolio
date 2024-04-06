@@ -4,6 +4,9 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function insertionSort(store: Writable<CharObj[]>) {
+	if (get(currentAlgorithm) == 'insertionSort') { // If already doing insertionSort, return
+		return;
+	}
 	currentAlgorithm.set('insertionSort');
 
 	let n = get(store).length; // length of array
