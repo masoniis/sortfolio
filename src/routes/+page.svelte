@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { charSwap } from "../lib/charSwap";
-	import { textArray } from "../lib/store";
-	import { bubbleSort } from "../lib/bubbleSort";
-	import { insertionSort } from "../lib/insertionSort";
-	import { shuffle } from "../lib/shuffle";
+	import { charSwap } from "$lib/functions/charSwap";
+	import { textArray } from "$lib/functions/store";
+	import { bubbleSort } from "$lib/functions/bubbleSort";
+	import { insertionSort } from "$lib/functions/insertionSort";
+	import { shuffle } from "$lib/functions/shuffle";
 </script>
 
 <body>
