@@ -2,8 +2,16 @@
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
-		extend: {},
+		fontFamily: {
+		},
+		extend: {
+			colors: {
+				'primary': '#d3dce6',
+			},
+		}
 	},
 	plugins: [],
 }
 
+// module.exports = {
+// }
