@@ -6,8 +6,7 @@ import { type CharObj, currentAlgorithm } from "./store";
 export async function insertionSort(store: Writable<CharObj[]>) {
 	currentAlgorithm.set('insertionSort');
 
-	// get the length of the array
-	let n = get(store).length;
+	let n = get(store).length; // length of array
 	// loop over the array starting from the second element
 	for (let i = 1; i < n; i++) {
 		// store the current element in a variable
@@ -17,6 +16,9 @@ export async function insertionSort(store: Writable<CharObj[]>) {
 		// loop over the sorted subarray from right to left
 		while (j >= 0 && get(store)[j].index > current.index) {
 			// move the element at index j to the right by one position
+			if (get(currentAlgorithm) !== 'insertionSort') { // If algorithm changes, stop doing insertionSort
+				return;
+			}
 			store.update((arr) => {
 				let temp = arr[j + 1];
 				arr[j + 1] = arr[j];
@@ -24,15 +26,8 @@ export async function insertionSort(store: Writable<CharObj[]>) {
 				return arr;
 			});
 			await wait(150);
-			// decrement j
 			j--;
 		}
-		// insert the current element at the correct position
-		store.update((arr) => {
-			arr[j + 1] = current;
-			return arr;
-		});
-		await wait(150);
 	}
 
 	currentAlgorithm.set(null);

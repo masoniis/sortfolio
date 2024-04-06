@@ -12,17 +12,11 @@ export async function bogoSort(store: Writable<CharObj[]>) {
 
 	// keep shuffling the array until it is sorted
 	while (!isSorted(store)) {
-		// Check if the current algorithm has changed
-		if (get(currentAlgorithm) !== 'bogoSort') {
-			// If the current algorithm has changed, stop executing bogoSort
-			currentAlgorithm.set(null);
+		if (get(currentAlgorithm) !== 'bogoSort') { // If algorithm changes, stop doing BOGO
 			return;
 		}
 
-		// Shuffle the array
 		shuffle(store);
-
-		// Wait for a short delay
 		await wait(200);
 	}
 

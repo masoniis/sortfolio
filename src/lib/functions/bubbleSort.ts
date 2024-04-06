@@ -14,6 +14,9 @@ export async function bubbleSort(store: Writable<CharObj[]>) {
 		for (let j = 0; j < n - i - 1; j++) {
 			// compare two adjacent elements by their char property
 			if (get(store)[j].index > get(store)[j + 1].index) {
+				if (get(currentAlgorithm) !== 'bubbleSort') { // If algorithm changes, stop doing bubblesort
+					return;
+				}
 				// swap them if they are out of order
 				let temp = get(store)[j];
 				store.update((arr) => {
