@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors.js";
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
@@ -6,7 +8,9 @@ export default {
 		},
 		extend: {
 			colors: {
-				'primary': '#d3dce6',
+				primary: colors.slate[900],
+				primarybg: colors.slate[800],
+				primaryfg: colors.slate[100],
 			},
 		}
 	},

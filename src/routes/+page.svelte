@@ -23,15 +23,13 @@
 
 <style lang="postcss">
 	h1 {
-		font-family: "Source Code Pro", monospace;
-		color: #c8d0f2;
+		color: theme(colors.primaryfg);
 		font-size: 8em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 	h3 {
-		font-family: "Source Code Pro", monospace;
 		color: #c8d0f2;
 		font-size: 3em;
 		display: flex;
@@ -42,7 +40,8 @@
 	button {
 		font-family: "Source Code Pro", monospace;
 		color: #c8d0f2;
-		background-color: theme(colors.slate.800);
+		background-color: theme(colors.primarybg);
+		color: theme(colors.primaryfg);
 		border: none;
 		padding: 0.5em 1em;
 		margin: 0.5em;
