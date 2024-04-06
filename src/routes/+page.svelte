@@ -3,6 +3,7 @@
 	import { textArray } from "$lib/functions/store";
 	import { bubbleSort } from "$lib/functions/bubbleSort";
 	import { insertionSort } from "$lib/functions/insertionSort";
+	import { bogoSort } from "$lib/functions/bogoSort";
 	import { shuffle } from "$lib/functions/shuffle";
 </script>
 
@@ -10,6 +11,7 @@
 	<button on:click={() => shuffle(textArray)}>shuffle</button>
 	<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
 	<button on:click={() => insertionSort(textArray)}>insertion sort</button>
+	<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
 	<h1>
 		{#each $textArray as char, i (char)}
 			<span animate:charSwap={i}>{char.value}</span>
