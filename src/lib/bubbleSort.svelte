@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
 	import { get } from "svelte/store";
+	import { wait } from "./extras.svelte";
 	import type { Writable } from "svelte/store";
 	import type { CharObj } from "./extras.svelte";
-	import { wait } from "./extras.svelte";
 
 	export async function bubbleSort(store: Writable<CharObj[]>) {
 		// get the length of the array
