@@ -4,7 +4,8 @@
 	import { bubbleSort } from "$lib/functions/bubbleSort";
 	import { insertionSort } from "$lib/functions/insertionSort";
 	import { bogoSort } from "$lib/functions/bogoSort";
-	import { shuffle } from "../lib/functions/shuffle";
+	import { shuffle } from "$lib/functions/shuffle";
+	import { currentAlgorithm } from "$lib/functions/store";
 </script>
 
 <body>
@@ -17,6 +18,7 @@
 			<span animate:charSwap={i}>{char.value}</span>
 		{/each}
 	</h1>
+	<h3>Current algorithm: {$currentAlgorithm || "None"}</h3>
 </body>
 
 <style>
@@ -24,6 +26,14 @@
 		font-family: "Source Code Pro", monospace;
 		color: #c8d0f2;
 		font-size: 8em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	h3 {
+		font-family: "Source Code Pro", monospace;
+		color: #c8d0f2;
+		font-size: 3em;
 		display: flex;
 		justify-content: center;
 		align-items: center;

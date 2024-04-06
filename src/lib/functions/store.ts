@@ -6,6 +6,9 @@ export interface CharObj {
 	index: number;
 }
 
+// Track which sorting algorithm is running at a given time
+export const currentAlgorithm = writable<null | string>(null);
+
 // Create a writable store that holds an array of objects
 export const textArray = writable<CharObj[]>([]);
 

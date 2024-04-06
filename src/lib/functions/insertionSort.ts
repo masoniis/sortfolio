@@ -1,9 +1,11 @@
 import { get } from "svelte/store";
 import { wait } from "./extras";
 import { type Writable } from "svelte/store";
-import type { CharObj } from "./store";
+import { type CharObj, currentAlgorithm } from "./store";
 
 export async function insertionSort(store: Writable<CharObj[]>) {
+	currentAlgorithm.set('insertionSort');
+
 	// get the length of the array
 	let n = get(store).length;
 	// loop over the array starting from the second element
@@ -32,4 +34,6 @@ export async function insertionSort(store: Writable<CharObj[]>) {
 		});
 		await wait(150);
 	}
+
+	currentAlgorithm.set(null);
 }

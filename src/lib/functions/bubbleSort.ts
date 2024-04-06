@@ -1,9 +1,11 @@
 import { get } from "svelte/store";
 import { wait } from "./extras";
 import { type Writable } from "svelte/store";
-import type { CharObj } from "./store";
+import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bubbleSort(store: Writable<CharObj[]>) {
+	currentAlgorithm.set('bubbleSort');
+
 	// get the length of the array
 	let n = get(store).length;
 	// loop over the array n-1 times
@@ -23,4 +25,5 @@ export async function bubbleSort(store: Writable<CharObj[]>) {
 			}
 		}
 	}
+	currentAlgorithm.set(null);
 }
