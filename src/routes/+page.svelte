@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { charSwap } from "../lib/charSwap";
 	import { textArray } from "../lib/store";
-	// import { bubbleSort } from "../lib/bubbleSort.svelte";
-	// import { insertionSort } from "../lib/insertionSort.svelte";
+	import { bubbleSort } from "../lib/bubbleSort";
+	import { insertionSort } from "../lib/insertionSort";
 	import { shuffle } from "../lib/shuffle";
 </script>
 
 <body>
 	<button on:click={() => shuffle(textArray)}>shuffle</button>
-	<!-- <button on:click={() => bubbleSort(textArray)}>bubble sort</button> -->
-	<!-- <button on:click={() => insertionSort(textArray)}>insertion sort</button> -->
+	<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
+	<button on:click={() => insertionSort(textArray)}>insertion sort</button>
 	<h1>
 		{#each $textArray as char, i (char)}
 			<span animate:charSwap={i}>{char.value}</span>
