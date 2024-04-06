@@ -21,7 +21,7 @@
 	<h3>Current algorithm: {$currentAlgorithm || "None"}</h3>
 </body>
 
-<style>
+<style lang="postcss">
 	h1 {
 		font-family: "Source Code Pro", monospace;
 		color: #c8d0f2;
@@ -37,5 +37,15 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	button {
+		font-family: "Source Code Pro", monospace;
+		color: #c8d0f2;
+		background-color: theme(colors.slate.800);
+		border: none;
+		padding: 0.5em 1em;
+		margin: 0.5em;
+		cursor: pointer;
 	}
 </style>

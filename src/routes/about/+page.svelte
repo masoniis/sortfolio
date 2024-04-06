@@ -1,2 +1,1 @@
-<h1>about</h1>
-<p>this is the about page.</p>
+<h1 class="text-3xl font-bold underline text-red-400">Hello world!</h1>
