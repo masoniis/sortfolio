@@ -4,7 +4,7 @@
 	import { bubbleSort } from "$lib/functions/bubbleSort";
 	import { insertionSort } from "$lib/functions/insertionSort";
 	import { bogoSort } from "$lib/functions/bogoSort";
-	import { shuffle } from "$lib/functions/shuffle";
+	import { shuffle } from "../lib/functions/shuffle";
 </script>
 
 <body>
