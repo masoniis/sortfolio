@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	import { get } from "svelte/store";
 	import { wait } from "./extras.svelte";
-	import type { Writable } from "svelte/store";
+	import { type Writable } from "svelte/store";
 	import type { CharObj } from "./extras.svelte";
 
 	export async function insertionSort(store: Writable<CharObj[]>) {
@@ -17,7 +17,7 @@
 			while (j >= 0 && get(store)[j].index > current.index) {
 				// move the element at index j to the right by one position
 				store.update((arr) => {
-					let temp = arr[j+1];
+					let temp = arr[j + 1];
 					arr[j + 1] = arr[j];
 					arr[j] = temp;
 					return arr;

@@ -16,7 +16,7 @@ textArray.set([
 	{ value: "s", index: 2 },
 	{ value: "o", index: 3 },
 	{ value: "n", index: 4 },
-	{ value: "_", index: 5 },
+	{ value: "ㅤ", index: 5 },
 	{ value: "B", index: 6 },
 	{ value: "o", index: 7 },
 	{ value: "t", index: 8 },

@@ -1,9 +1,11 @@
-<script lang="ts" context="module">
+<script lang="ts">
 	import { get } from "svelte/store";
-	import type { Writable } from "svelte/store";
-	import type { CharObj } from "./store";
+	// import type { CharObj } from "./store";
+	import CharObj from "./extras.svelte";
+	import * as hhh from "svelte/store";
+	// import type { Writable } from "svelte/store";
 
-	export function shuffle(store: Writable<CharObj[]>) {
+	export function shuffle(store: hhh.Writable<CharObj[]>) {
 		// get the length of the array
 		let n = get(store).length;
 		// loop over the array from the last element to the second element
