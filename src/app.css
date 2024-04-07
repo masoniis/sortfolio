@@ -16,8 +16,7 @@
   }
 
 	html {
-    font-family: "Inter", "Proxima Nova", system-ui, sans-serif;
-    /* font-family: "Proxima Nova", system-ui, sans-serif; */
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
   }
 
 	@font-face {
