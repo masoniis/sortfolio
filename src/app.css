@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primarybg: 24 24 27; /* tailwind zinc 900 */
+    --color-primaryfg: 212 212 216; /* tailwind zinc 300 */
+    --color-primaryaccentbg: 254 202 202; /* tailwind red 200 */
+    --color-primaryaccentfg: 24 24 27; /* tailwind zinc 900 */
+
+    --color-secondarybg: 71 85 105;
+    --color-secondaryfg: 15 23 42;
+    --color-secondaryaccentbg: 15 23 42;
+    --color-secondaryaccentfg: 15 23 42;
+  }
+}

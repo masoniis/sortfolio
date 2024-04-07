@@ -15,7 +15,7 @@
 	<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
 	<h1>
 		{#each $textArray as char, i (char)}
-			<span animate:charSwap={i}>{char.value}</span>
+			<span animate:charSwap={i}>{@html char.value}</span>
 		{/each}
 	</h1>
 	<h3>Current algorithm: {$currentAlgorithm || "None"}</h3>
@@ -30,7 +30,7 @@
 		align-items: center;
 	}
 	h3 {
-		color: #c8d0f2;
+		color: theme(colors.primaryfg);
 		font-size: 3em;
 		display: flex;
 		justify-content: center;
@@ -40,8 +40,8 @@
 	button {
 		font-family: "Source Code Pro", monospace;
 		color: #c8d0f2;
-		background-color: theme(colors.primarybg);
-		color: theme(colors.primaryfg);
+		background-color: theme(colors.primaryaccentbg);
+		color: theme(colors.primaryaccentfg);
 		border: none;
 		padding: 0.5em 1em;
 		margin: 0.5em;
