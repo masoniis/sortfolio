@@ -3,6 +3,7 @@ import { writable } from "svelte/store";
 // Define the interface for the object type
 export interface CharObj {
 	value: string;
+	scan?: boolean;
 	index: number;
 }
 
@@ -14,14 +15,14 @@ export const textArray = writable<CharObj[]>([]);
 
 // Populate the store with some initial data
 textArray.set([
-	{ value: "M", index: 0 },
-	{ value: "a", index: 1 },
-	{ value: "s", index: 2 },
-	{ value: "o", index: 3 },
-	{ value: "n", index: 4 },
-	{ value: "&ensp;", index: 5 },
-	{ value: "B", index: 6 },
-	{ value: "o", index: 7 },
-	{ value: "t", index: 8 },
-	{ value: "t", index: 9 },
+	{ value: "M", scan: false, index: 0 },
+	{ value: "a", scan: false, index: 1 },
+	{ value: "s", scan: false, index: 2 },
+	{ value: "o", scan: false, index: 3 },
+	{ value: "n", scan: false, index: 4 },
+	{ value: "&ensp;", scan: false, index: 5 },
+	{ value: "B", scan: false, index: 6 },
+	{ value: "o", scan: false, index: 7 },
+	{ value: "t", scan: false, index: 8 },
+	{ value: "t", scan: false, index: 9 },
 ]);

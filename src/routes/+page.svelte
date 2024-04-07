@@ -10,8 +10,10 @@
 
 <body>
 	<h1 class="overflow-clip text-7xl sm:text-8xl md:text-9xl">
-		{#each $textArray as char, i (char)}
-			<span animate:charSwap={i}>{@html char.value}</span>
+		{#each $textArray as charObj, i (charObj)}
+			<span class:scan={charObj.scan} animate:charSwap={i}>
+				{@html charObj.value}
+			</span>
 		{/each}
 	</h1>
 	<h3 class="flex justify-center">
@@ -46,5 +48,17 @@
 		padding: 0.5em 1em;
 		margin: 0.5em;
 		cursor: pointer;
+	}
+
+	span.scan {
+		background: linear-gradient(
+			90deg,
+			rgba(2, 0, 36, 1) 0%,
+			rgba(9, 9, 121, 1) 35%,
+			theme(colors.primaryaccentbg) 100%
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 	}
 </style>
