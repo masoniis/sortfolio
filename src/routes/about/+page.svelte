@@ -1,3 +1,7 @@
-<body class="min-h-screen">
-	<h1 class="text-3xl font-bold underline text-red-400">Hello world!</h1>
+<body class="text-primaryfg min-h-screen">
+	<spacer class="flex flex-grow pt-16 sm:pt-20"></spacer>
+	<container class="ml-20 pl-20">
+		<h1 class="text-5xl">About</h1>
+		<p>about about about</p>
+	</container>
 </body>
