@@ -104,17 +104,20 @@
 			<div class="space-y-1 px-2 pb-3 pt-2">
 				<a
 					href="/"
-					class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+					class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+					class:active={$page.url.pathname === "/"}
 					aria-current="page">Home</a
 				>
 				<a
 					href="/projects"
-					class="bg-secondarybg text-secondaryfg rounded-md px-3 py-2 text-sm font-medium"
+					class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+					class:active={$page.url.pathname === "/projects"}
 					aria-current="page">Projects</a
 				>
 				<a
 					href="/about"
-					class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+					class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+					class:active={$page.url.pathname === "/about"}
 					aria-current="page">About</a
 				>
 			</div>
