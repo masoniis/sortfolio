@@ -9,13 +9,16 @@
 </script>
 
 <body>
-	<h1 class="overflow-clip text-7xl sm:text-8xl md:text-9xl">
-		{#each $textArray as charObj, i (charObj)}
-			<span class:scan={charObj.scan} animate:charSwap={i}>
-				{@html charObj.value}
-			</span>
-		{/each}
-	</h1>
+	<div class="flex-col">
+		<h3 class="m-3.5 text-primaryfg">Hi, I'm</h3>
+		<h1 class="flex justify-center overflow-clip text-dynamich1 text-primaryfg">
+			{#each $textArray as charObj, i (charObj)}
+				<span class:scan={charObj.scan} animate:charSwap={i}>
+					{@html charObj.value}
+				</span>
+			{/each}
+		</h1>
+	</div>
 	<h3 class="flex justify-center">
 		<span class="bg-primaryaccentbg text-primaryaccentfg"
 			>Current algorithm: {$currentAlgorithm || "None"}
@@ -30,12 +33,6 @@
 </body>
 
 <style lang="postcss">
-	h1 {
-		color: theme(colors.primaryfg);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 	h3 {
 		font-size: 3em;
 	}

@@ -14,4 +14,17 @@
     --color-secondaryaccentbg: 24 24 27; /* tailwind zinc 900 */
     --color-secondaryaccentfg: 212 212 216; /* tailwind zinc 300 */
   }
+
+	html {
+    font-family: "Inter", "Proxima Nova", system-ui, sans-serif;
+    /* font-family: "Proxima Nova", system-ui, sans-serif; */
+  }
+
+	@font-face {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+	}
 }

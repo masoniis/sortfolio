@@ -1,5 +1,3 @@
-import colors from "tailwindcss/colors.js";
-
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
@@ -18,10 +16,11 @@ export default {
 				secondaryaccentbg: 'rgb(var(--color-secondaryaccentbg) / 1.0)',
 				secondaryaccentfg: 'rgb(var(--color-secondaryaccentfg) / 1.0)',
 			},
+			fontSize: {
+				dynamich1: "clamp(0.5rem, 15vw, 8.5rem)", // 1rem min, 10% of viewport width, 8.5rem max
+			},
 		}
 	},
 	plugins: [],
 }
 
-// module.exports = {
-// }
