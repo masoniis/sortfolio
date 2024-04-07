@@ -5,17 +5,17 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bogoSort(store: Writable<CharObj[]>) {
-	if (get(currentAlgorithm) == 'bogoSort') { // If already doing bogo, return
+	if (get(currentAlgorithm)?.name
+		== 'Bogosort') {
+		// If already doing bogo, return
 		return;
 	}
-	currentAlgorithm.set('bogoSort');
-
-	// get the length of the array
-	let n = get(store).length;
+	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; return alg; });
+	currentAlgorithm.update((alg) => { alg.complexity = 'O(n*n!)'; return alg; });
 
 	// keep shuffling the array until it is sorted
 	while (!isSorted(store)) {
-		if (get(currentAlgorithm) !== 'bogoSort') { // If algorithm changes, stop doing BOGO
+		if (get(currentAlgorithm).name !== 'Bogosort') { // If algorithm changes, stop doing BOGO
 			return;
 		}
 
@@ -23,7 +23,7 @@ export async function bogoSort(store: Writable<CharObj[]>) {
 		await wait(200);
 	}
 
-	currentAlgorithm.set(null);
+	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
 }
 
 function isSorted(store: Writable<CharObj[]>): boolean {

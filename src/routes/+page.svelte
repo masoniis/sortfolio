@@ -6,12 +6,14 @@
 	import { bogoSort } from "$lib/functions/bogoSort";
 	import { shuffle } from "$lib/functions/shuffle";
 	import { currentAlgorithm } from "$lib/functions/store";
+	import { fade } from "svelte/transition";
+	import Katex from "svelte-katex";
 </script>
 
 <body>
 	<spacer class="flex flex-grow mt-32 sm:mt-52"></spacer>
 	<div class="flex flex-col ml-4 2xs:ml-8 md:ml-24">
-		<h3 class="text-primaryfg w-fit text-dynamich3">Hi, I'm</h3>
+		<h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3>
 		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">
 			{#each $textArray as charObj, i (charObj)}
 				<span class:scan={charObj.scan} animate:charSwap={i}>
@@ -19,13 +21,18 @@
 				</span>
 			{/each}
 		</h1>
+		<container class="min-h-12 mt-4">
+			{#if $currentAlgorithm?.name}
+				<h6
+					class="text-green-500 text-dynamich6 font-code"
+					transition:fade={{ duration: 200 }}
+				>
+					{$currentAlgorithm.name}: {$currentAlgorithm.complexity}
+				</h6>
+			{/if}
+		</container>
 	</div>
-	<h3 class="flex justify-center">
-		<span class="bg-primaryaccentbg text-primaryaccentfg"
-			>Current algorithm: {$currentAlgorithm || "None"}
-		</span>
-	</h3>
-	<div class="flex justify-center overflow-clip">
+	<div class="flex justify-center overflow-clip mt-8">
 		<button on:click={() => shuffle(textArray)}>shuffle</button>
 		<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
 		<button on:click={() => insertionSort(textArray)}>insertion sort</button>

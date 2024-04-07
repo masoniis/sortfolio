@@ -4,17 +4,18 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bubbleSort(store: Writable<CharObj[]>) {
-	if (get(currentAlgorithm) == 'bubbleSort') { // If already doing bubble, return
+	if (get(currentAlgorithm).name == 'Bubble sort') { // If already doing bubble, return
 		return;
 	}
-	currentAlgorithm.set('bubbleSort');
+	currentAlgorithm.update((alg) => { alg.name = 'Bubble sort'; return alg; });
+	currentAlgorithm.update((alg) => { alg.complexity = 'O(n^2)'; return alg; });
 
 	// get the length of the array
 	let n = get(store).length;
 	for (let i = 0; i < n - 1; i++) {
 		for (let j = 0; j < n - i - 1; j++) {
 			if (get(store)[j].index > get(store)[j + 1].index) {
-				if (get(currentAlgorithm) !== 'bubbleSort') // If algorithm changes, stop doing bubblesort
+				if (get(currentAlgorithm).name !== 'Bubble sort') // If algorithm changes, stop doing bubblesort
 					return;
 				// swap them if they are out of order
 				let temp = get(store)[j];
@@ -27,5 +28,5 @@ export async function bubbleSort(store: Writable<CharObj[]>) {
 			}
 		}
 	}
-	currentAlgorithm.set(null);
+	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
 }

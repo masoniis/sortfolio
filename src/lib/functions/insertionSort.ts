@@ -4,10 +4,11 @@ import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function insertionSort(store: Writable<CharObj[]>) {
-	if (get(currentAlgorithm) == 'insertionSort') { // If already doing insertionSort, return
+	if (get(currentAlgorithm).name == 'Insertion sort') { // If already doing insertionSort, return
 		return;
 	}
-	currentAlgorithm.set('insertionSort');
+	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; return alg; });
+	currentAlgorithm.update((alg) => { alg.complexity = 'O(n^2)'; return alg; });
 
 	let n = get(store).length; // length of array
 	for (let i = 1; i < n; i++) {
@@ -18,7 +19,7 @@ export async function insertionSort(store: Writable<CharObj[]>) {
 		// loop over the sorted subarray from right to left
 		while (j >= 0 && get(store)[j].index > current.index) {
 			// move the element at index j to the right by one position
-			if (get(currentAlgorithm) !== 'insertionSort') { // If algorithm changes, stop doing insertionSort
+			if (get(currentAlgorithm).name !== 'Insertion sort') { // If algorithm changes, stop doing insertionSort
 				current.scan = false;
 				return;
 			}
@@ -36,5 +37,5 @@ export async function insertionSort(store: Writable<CharObj[]>) {
 
 	store.update((arr) => { return arr }) // Update store with current state for UI
 
-	currentAlgorithm.set(null);
+	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
 }

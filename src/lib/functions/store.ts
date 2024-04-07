@@ -7,8 +7,15 @@ export interface CharObj {
 	index: number;
 }
 
+interface AlgorithmObj {
+	name?: string;
+	complexity?: string;
+}
+
+const algorithm: AlgorithmObj = {};
+
 // Track which sorting algorithm is running at a given time
-export const currentAlgorithm = writable<null | string>(null);
+export const currentAlgorithm = writable<AlgorithmObj>(algorithm);
 
 // Create a writable store that holds an array of objects
 export const textArray = writable<CharObj[]>([]);
