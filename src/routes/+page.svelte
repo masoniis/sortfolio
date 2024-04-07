@@ -9,16 +9,22 @@
 </script>
 
 <body>
-	<button on:click={() => shuffle(textArray)}>shuffle</button>
-	<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
-	<button on:click={() => insertionSort(textArray)}>insertion sort</button>
-	<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
 	<h1>
 		{#each $textArray as char, i (char)}
 			<span animate:charSwap={i}>{@html char.value}</span>
 		{/each}
 	</h1>
-	<h3>Current algorithm: {$currentAlgorithm || "None"}</h3>
+	<h3 class="flex justify-center">
+		<span class="bg-primaryaccentbg text-primaryaccentfg"
+			>Current algorithm: {$currentAlgorithm || "None"}
+		</span>
+	</h3>
+	<div class="flex justify-center">
+		<button on:click={() => shuffle(textArray)}>shuffle</button>
+		<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
+		<button on:click={() => insertionSort(textArray)}>insertion sort</button>
+		<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
+	</div>
 </body>
 
 <style lang="postcss">
@@ -30,11 +36,7 @@
 		align-items: center;
 	}
 	h3 {
-		color: theme(colors.primaryfg);
 		font-size: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	button {
