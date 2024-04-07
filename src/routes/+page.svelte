@@ -35,7 +35,8 @@
 
 <style lang="postcss">
 	h1 {
-		line-height: 0.85;
+		line-height: 0.9;
+		overflow: visible;
 	}
 
 	button {
