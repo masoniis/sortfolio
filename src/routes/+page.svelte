@@ -9,8 +9,8 @@
 </script>
 
 <body>
-	<spacer class="space-y-96 flex flex-grow mt-32 sm:mt-52"></spacer>
-	<div class="flex flex-col ml-4 sm:ml-8 md:ml-24">
+	<spacer class="flex flex-grow mt-32 sm:mt-52"></spacer>
+	<div class="flex flex-col ml-4 2xs:ml-8 md:ml-24">
 		<h3 class="text-primaryfg w-fit text-dynamich3">Hi, I'm</h3>
 		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">
 			{#each $textArray as charObj, i (charObj)}
