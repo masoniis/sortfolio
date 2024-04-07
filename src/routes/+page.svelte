@@ -9,9 +9,10 @@
 </script>
 
 <body>
-	<div class="flex-col">
-		<h3 class="m-3.5 text-primaryfg">Hi, I'm</h3>
-		<h1 class="flex justify-center overflow-clip text-dynamich1 text-primaryfg">
+	<spacer class="space-y-96 flex flex-grow mt-32 sm:mt-52"></spacer>
+	<div class="flex flex-col ml-4 sm:ml-8 md:ml-24">
+		<h3 class="text-primaryfg w-fit text-dynamich3">Hi, I'm</h3>
+		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">
 			{#each $textArray as charObj, i (charObj)}
 				<span class:scan={charObj.scan} animate:charSwap={i}>
 					{@html charObj.value}
@@ -33,8 +34,8 @@
 </body>
 
 <style lang="postcss">
-	h3 {
-		font-size: 3em;
+	h1 {
+		line-height: 0.85;
 	}
 
 	button {
