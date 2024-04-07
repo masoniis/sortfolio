@@ -11,6 +11,7 @@
 </svelte:head>
 
 <Navbar />
+
 <slot />
 
 <style lang="postcss">

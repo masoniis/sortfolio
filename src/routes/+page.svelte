@@ -8,7 +8,7 @@
 	import { currentAlgorithm } from "$lib/functions/store";
 </script>
 
-<body class="m-8">
+<body>
 	<h1 class="overflow-clip text-7xl sm:text-8xl md:text-9xl">
 		{#each $textArray as char, i (char)}
 			<span animate:charSwap={i}>{@html char.value}</span>
