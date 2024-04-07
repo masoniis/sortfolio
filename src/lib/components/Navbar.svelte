@@ -1,5 +1,6 @@
 <script>
 	import { writable } from "svelte/store";
+	import { page } from "$app/stores";
 
 	const isDropdownOpen = writable(false);
 
@@ -12,21 +13,33 @@
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="flex flex-1">
-				<div class="flex flex-shrink-0 items-center">
-					<img class="h-8 w-auto text-secondaryfg" src="" alt="Icon" />
-				</div>
+				<a href="/" class="flex flex-shrink-0 items-center">
+					<img
+						class="h-8 w-auto text-secondaryfg"
+						src="knight.svg"
+						alt="Icon"
+					/>
+				</a>
 			</div>
 			<div></div>
 			<div class="hidden sm:ml-6 sm:block">
 				<div class="flex space-x-4">
 					<a
 						href="/"
-						class="bg-secondarybg text-secondaryfg rounded-md px-3 py-2 text-sm font-medium"
-						aria-current="page">Main</a
+						class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+						class:active={$page.url.pathname === "/"}
+						aria-current="page">Home</a
+					>
+					<a
+						href="/projects"
+						class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+						class:active={$page.url.pathname === "/projects"}
+						aria-current="page">Projects</a
 					>
 					<a
 						href="/about"
-						class="bg-secondarybg text-secondaryfg rounded-md px-3 py-2 text-sm font-medium"
+						class="bg-secondaryaccentbg text-secondaryaccentfg rounded-md px-3 py-2 text-sm font-medium"
+						class:active={$page.url.pathname === "/about"}
 						aria-current="page">About</a
 					>
 				</div>
@@ -92,7 +105,12 @@
 				<a
 					href="/"
 					class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-					aria-current="page">Main</a
+					aria-current="page">Home</a
+				>
+				<a
+					href="/projects"
+					class="bg-secondarybg text-secondaryfg rounded-md px-3 py-2 text-sm font-medium"
+					aria-current="page">Projects</a
 				>
 				<a
 					href="/about"
@@ -103,3 +121,10 @@
 		</div>
 	{/if}
 </nav>
+
+<style lang="postcss">
+	a.active {
+		@apply underline-offset-1;
+		@apply underline;
+	}
+</style>

@@ -39,9 +39,8 @@
 
 	button {
 		font-family: "Source Code Pro", monospace;
-		color: #c8d0f2;
-		background-color: theme(colors.primaryaccentbg);
 		color: theme(colors.primaryaccentfg);
+		background-color: theme(colors.primaryaccentbg);
 		border: none;
 		padding: 0.5em 1em;
 		margin: 0.5em;
