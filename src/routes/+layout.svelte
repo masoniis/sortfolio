@@ -1,6 +1,7 @@
 <script lang="ts">
 	import "../app.css";
 	import Navbar from "$lib/components/Navbar.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 </script>
 
 <svelte:head>
@@ -13,6 +14,8 @@
 <Navbar />
 
 <slot />
+
+<Footer />
 
 <style lang="postcss">
 	:global(html) {

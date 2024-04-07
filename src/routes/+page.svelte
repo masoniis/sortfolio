@@ -7,11 +7,10 @@
 	import { shuffle } from "$lib/functions/shuffle";
 	import { currentAlgorithm } from "$lib/functions/store";
 	import { fade } from "svelte/transition";
-	import Katex from "svelte-katex";
 </script>
 
-<body>
-	<spacer class="flex flex-grow mt-32 sm:mt-52"></spacer>
+<body class="min-h-screen">
+	<spacer class="flex flex-grow pt-32 sm:pt-52"></spacer>
 	<div class="flex flex-col ml-4 2xs:ml-8 md:ml-24">
 		<h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3>
 		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">

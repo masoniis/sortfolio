@@ -1,4 +1,4 @@
-<body class="text-primaryfg">
+<body class="text-primaryfg min-h-screen">
 	<h1 class="text-5xl">Projects</h1>
 	<p>projects projects projects</p>
 

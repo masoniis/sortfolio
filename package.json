@@ -22,7 +22,5 @@
 		"vite": "^5.2.8"
 	},
 	"type": "module",
-	"dependencies": {
-		"svelte-katex": "^0.1.2"
-	}
+	"dependencies": {}
 }
