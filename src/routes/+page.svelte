@@ -20,10 +20,10 @@
 				</span>
 			{/each}
 		</h1>
-		<container class="min-h-12 mt-4">
+		<container class="min-h-12 mt-4 font-code">
 			{#if $currentAlgorithm?.name}
 				<h6
-					class="text-green-500 text-dynamich6 font-code"
+					class="text-green-500 text-dynamich6"
 					transition:fade={{ duration: 200 }}
 				>
 					{$currentAlgorithm.name}: {$currentAlgorithm.complexity}
