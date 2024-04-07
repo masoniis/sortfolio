@@ -1,3 +1,31 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+
+	//INFO: Last updated text that automatically updates when github changes
+	let lastUpdatedText = "";
+
+	onMount(() => {
+		fetch("https://api.github.com/repos/masoniis/portfolio")
+			.then((response) => {
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error("Failed to fetch repository");
+				}
+			})
+			.then((repo) => {
+				if (repo) {
+					const lastUpdated = new Date(repo.updated_at).toLocaleDateString();
+					lastUpdatedText = `Updated ${lastUpdated}`;
+				}
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+				lastUpdatedText = "Updated a while ago...";
+			});
+	});
+</script>
+
 <footer class="bg-primarybg">
 	<div
 		class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
@@ -65,7 +93,7 @@
 				</svg>
 			</a>
 			<a
-				href="https://linkedin.com/masonbott"
+				href="https://www.linkedin.com/in/masonmbott/"
 				class="text-primaryfg hover:text-primaryaccentbg"
 			>
 				<span class="sr-only">LinkedIn</span>
@@ -98,7 +126,10 @@
 		</div>
 		<div class="mt-8 md:order-1 md:mt-0">
 			<p class="text-center text-xs leading-5 text-primaryfg">
-				&copy; 2024 Mason Bott
+				&copy; 2024 Mason Bott.
+			</p>
+			<p class="text-center text-xs leading-5 text-primaryfg/70">
+				{lastUpdatedText}
 			</p>
 		</div>
 	</div>
