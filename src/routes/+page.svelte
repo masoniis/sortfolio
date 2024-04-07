@@ -9,7 +9,7 @@
 </script>
 
 <body>
-	<h1>
+	<h1 class="overflow-clip text-7xl sm:text-8xl md:text-9xl">
 		{#each $textArray as char, i (char)}
 			<span animate:charSwap={i}>{@html char.value}</span>
 		{/each}
@@ -19,7 +19,7 @@
 			>Current algorithm: {$currentAlgorithm || "None"}
 		</span>
 	</h3>
-	<div class="flex justify-center">
+	<div class="flex justify-center overflow-clip">
 		<button on:click={() => shuffle(textArray)}>shuffle</button>
 		<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
 		<button on:click={() => insertionSort(textArray)}>insertion sort</button>
@@ -30,7 +30,6 @@
 <style lang="postcss">
 	h1 {
 		color: theme(colors.primaryfg);
-		font-size: 8em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
