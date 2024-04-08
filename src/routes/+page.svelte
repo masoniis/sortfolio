@@ -54,11 +54,6 @@
 		overflow: visible;
 	}
 
-	button {
-		@apply text-primaryaccentfg bg-primaryaccentbg mx-2 p-2 cursor-pointer;
-		@apply border-none rounded-md;
-	}
-
 	span.scan {
 		@apply border-b-2 border-primaryaccentbg;
 	}
