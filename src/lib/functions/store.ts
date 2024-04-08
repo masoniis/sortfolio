@@ -12,7 +12,7 @@ interface AlgorithmObj {
 	complexity?: string;
 }
 
-const algorithm: AlgorithmObj = {};
+const algorithm: AlgorithmObj = { name: "start" };
 
 // Track which sorting algorithm is running at a given time
 export const currentAlgorithm = writable<AlgorithmObj>(algorithm);

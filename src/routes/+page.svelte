@@ -1,17 +1,17 @@
 <script lang="ts">
+	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
 	import { textArray } from "$lib/functions/store";
-	import { bubbleSort } from "$lib/functions/bubbleSort";
-	import { insertionSort } from "$lib/functions/insertionSort";
-	import { bogoSort } from "$lib/functions/bogoSort";
-	import { shuffle } from "$lib/functions/shuffle";
 	import { currentAlgorithm } from "$lib/functions/store";
 	import { fade } from "svelte/transition";
 	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
 
 	onMount(() => {
-		autoplay();
+		if (get(currentAlgorithm).name == "start") {
+			currentAlgorithm.set({ name: "", complexity: "" });
+			autoplay();
+		}
 	});
 </script>
 
