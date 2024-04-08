@@ -67,7 +67,7 @@
 		</div>
 		<div class="mt-8 2xs:order-1 2xs:mt-0">
 			<p class="text-center text-xs leading-5 text-primaryfg">
-				&copy; 2024 Mason Bott.
+				&copy; 2024 Mason Bott
 			</p>
 			<p class="text-center text-xs leading-5 text-primaryfg/70">
 				{lastUpdatedText}

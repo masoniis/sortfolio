@@ -17,5 +17,10 @@ export async function autoplay() {
 		await insertionSort(textArray);
 
 		await delay(3000); // Wait for a bit before sorting again
+
+		shuffle(textArray);
+		await delay(500);
+		await bubbleSort(textArray);
+		await delay(3000); // Wait for a bit before sorting again
 	}
 }
