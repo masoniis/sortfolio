@@ -6,7 +6,7 @@
   :root {
     --color-primarybg: 24 24 27; /* tailwind zinc 900 */
     --color-primaryfg: 212 212 216; /* tailwind zinc 300 */
-    --color-primaryaccentbg: 254 202 202; /* tailwind red 200 */
+    --color-primaryaccentbg: 34 197 94; /* tailwind green 500 */
     --color-primaryaccentfg: 24 24 27; /* tailwind zinc 900 */
 
     --color-secondarybg: 71 85 105;

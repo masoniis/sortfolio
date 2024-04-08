@@ -11,7 +11,7 @@ function delay(ms: number) {
 
 export async function autoplay() {
 	await delay(1500);
-	for (let i = 0; i < 10; i++) {
+	while (true) {
 		shuffle(textArray);
 		await delay(500);
 		await insertionSort(textArray);

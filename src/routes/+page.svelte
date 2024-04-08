@@ -29,9 +29,9 @@
 			{/each}
 		</h1>
 		<container class="min-h-12 mt-4 font-code">
-			{#if $currentAlgorithm?.name}
+			{#if $currentAlgorithm?.name && $currentAlgorithm?.complexity}
 				<h6
-					class="text-green-500 text-dynamich6"
+					class="text-primaryaccentbg text-dynamich6"
 					transition:fade={{ duration: 200 }}
 				>
 					{$currentAlgorithm.name}: {$currentAlgorithm.complexity}
@@ -60,6 +60,6 @@
 	}
 
 	span.scan {
-		@apply border-b-2 border-green-500;
+		@apply border-b-2 border-primaryaccentbg;
 	}
 </style>
