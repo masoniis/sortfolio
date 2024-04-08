@@ -15,9 +15,9 @@
 	});
 </script>
 
-<spacer class="flex flex-grow pt-32 sm:pt-52"></spacer>
+<spacer class="flex flex-grow pt-[8vh] sm:pt-[30vh]"></spacer>
 <container
-	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
+	class="text-primaryfg min-h-[92vh] sm:min-h-[70vh] flex flex-grow flex-col max-w-7xl mx-auto"
 >
 	<div class="flex flex-col">
 		<h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3>

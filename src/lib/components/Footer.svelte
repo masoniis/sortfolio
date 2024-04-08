@@ -27,9 +27,9 @@
 
 <footer class="bg-primarybg">
 	<div
-		class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
+		class="mx-auto max-w-7xl px-6 py-12 2xs:flex 2xs:items-center 2xs:justify-between lg:px-8"
 	>
-		<div class="flex justify-center space-x-6 md:order-2">
+		<div class="flex justify-center space-x-6 2xs:order-2">
 			<a
 				href="https://github.com/masoniis"
 				class="text-primaryfg hover:text-primaryaccentbg transition-colors ease-in-out duration-300"
@@ -65,7 +65,7 @@
 				</svg>
 			</a>
 		</div>
-		<div class="mt-8 md:order-1 md:mt-0">
+		<div class="mt-8 2xs:order-1 2xs:mt-0">
 			<p class="text-center text-xs leading-5 text-primaryfg">
 				&copy; 2024 Mason Bott.
 			</p>
