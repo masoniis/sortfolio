@@ -15,7 +15,7 @@
 			})
 			.then((repo) => {
 				if (repo) {
-					const lastUpdated = new Date(repo.updated_at).toLocaleDateString();
+					const lastUpdated = new Date(repo.pushed_at).toLocaleDateString();
 					lastUpdatedText = `Updated ${lastUpdated}`;
 				}
 			})
