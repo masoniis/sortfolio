@@ -9,9 +9,9 @@
 	import { fade } from "svelte/transition";
 </script>
 
-<body class="min-h-screen">
+<container class="min-h-screen">
 	<spacer class="flex flex-grow pt-32 sm:pt-52"></spacer>
-	<div class="flex flex-col ml-4 2xs:ml-8 md:ml-24">
+	<div class="flex flex-col">
 		<h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3>
 		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">
 			{#each $textArray as charObj, i (charObj)}
@@ -37,7 +37,14 @@
 		<button on:click={() => insertionSort(textArray)}>insertion sort</button>
 		<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
 	</div>
-</body>
+</container>
+
+<!-- background: linear-gradient( -->
+<!-- 	90deg, -->
+<!-- 	rgba(2, 0, 36, 1) 0%, -->
+<!-- 	rgba(9, 9, 121, 1) 35%, -->
+<!-- 	theme(colors.primaryaccentbg) 100% -->
+<!-- ); -->
 
 <style lang="postcss">
 	h1 {
@@ -46,24 +53,11 @@
 	}
 
 	button {
-		font-family: "Source Code Pro", monospace;
-		color: theme(colors.primaryaccentfg);
-		background-color: theme(colors.primaryaccentbg);
-		border: none;
-		padding: 0.5em 1em;
-		margin: 0.5em;
-		cursor: pointer;
+		@apply text-primaryaccentfg bg-primaryaccentbg mx-2 p-2 cursor-pointer;
+		@apply border-none rounded-md;
 	}
 
 	span.scan {
-		background: linear-gradient(
-			90deg,
-			rgba(2, 0, 36, 1) 0%,
-			rgba(9, 9, 121, 1) 35%,
-			theme(colors.primaryaccentbg) 100%
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		color: transparent;
+		@apply border-b-2 border-green-500;
 	}
 </style>

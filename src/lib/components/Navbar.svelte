@@ -7,13 +7,13 @@
 </script>
 
 <nav class="bg-primarybg">
-	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-7xl">
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="flex flex-1">
 				<a
 					href="/"
 					id="icon"
-					class="flex flex-shrink-0 items-center hover:border-b-0"
+					class="flex flex-shrink-0 items-center hover:border-b-0 p-4"
 				>
 					<img class="h-8 w-auto text-primaryfg" src="knight.svg" alt="Icon" />
 				</a>
@@ -51,7 +51,11 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if open}
-		<div class="sm:hidden absolute right-0" id="mobile-menu" transition:fade>
+		<div
+			class="sm:hidden absolute right-0 mx-4 xs:mx-8 sm:mx-10"
+			id="mobile-menu"
+			transition:fade
+		>
 			<div class="space-y-1 px-2 pb-3 pt-2">
 				<a
 					href="/"
