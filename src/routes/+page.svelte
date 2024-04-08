@@ -7,6 +7,12 @@
 	import { shuffle } from "$lib/functions/shuffle";
 	import { currentAlgorithm } from "$lib/functions/store";
 	import { fade } from "svelte/transition";
+	import { autoplay } from "$lib/functions/autoplay";
+	import { onMount } from "svelte";
+
+	onMount(() => {
+		autoplay();
+	});
 </script>
 
 <spacer class="flex flex-grow pt-32 sm:pt-52"></spacer>
@@ -32,12 +38,6 @@
 				</h6>
 			{/if}
 		</container>
-	</div>
-	<div class="flex justify-center overflow-clip mt-8">
-		<button on:click={() => shuffle(textArray)}>shuffle</button>
-		<button on:click={() => bubbleSort(textArray)}>bubble sort</button>
-		<button on:click={() => insertionSort(textArray)}>insertion sort</button>
-		<button on:click={() => bogoSort(textArray)}>BOGO sort</button>
 	</div>
 </container>
 
