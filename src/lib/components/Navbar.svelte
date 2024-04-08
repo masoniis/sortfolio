@@ -13,7 +13,7 @@
 				<a
 					href="/"
 					id="icon"
-					class="flex flex-shrink-0 items-center hover:border-b-0 p-4"
+					class="flex flex-shrink-0 items-center hover:border-b-0 p-4 m-[-16px]"
 				>
 					<img class="h-8 w-auto text-primaryfg" src="knight.svg" alt="Icon" />
 				</a>
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-			<div class="flex items-center sm:hidden">
+			<div class="flex items-center sm:hidden m-[-16px]">
 				<Hamburger
 					bind:open
 					--color="var(--primary-fg-color)"
@@ -56,7 +56,7 @@
 			id="mobile-menu"
 			transition:fade
 		>
-			<div class="space-y-1 px-2 pb-3 pt-2">
+			<div class="space-y-1 pl-2 pb-3 pt-2">
 				<a
 					href="/"
 					class:active={$page.url.pathname === "/"}
