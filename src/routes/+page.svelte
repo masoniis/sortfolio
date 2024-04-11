@@ -13,10 +13,35 @@
 			autoplay();
 		}
 	});
+
+	let mouseX = 0;
+	let mouseY = 0;
+	let scrollY = 0;
+	let prevScrolly = 0;
+	let dY = 0;
+
+	$: auraStyle = `--top: ${mouseY - 200 + dY}px; --left: ${mouseX - 200}px;`;
+
+	$: {
+		dY += scrollY - prevScrolly;
+		prevScrolly = scrollY;
+	}
+
+	const handleMouseMove = (e: MouseEvent) => {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	};
 </script>
 
+<svelte:window bind:scrollY />
+
+<div class="aura overflow-clip overflow-x-hidden" style={auraStyle}></div>
+
+<!-- svelte-ignore a11y-mousemove -->
 <container
+	on:mousemove={handleMouseMove}
 	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-8 lg:space-y-0 mt-8 sm:mt-12 lg:mt-20"
+	role="region"
 >
 	<div class="flex flex-col lg:flex-1">
 		<!-- <h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3> -->
@@ -46,7 +71,11 @@
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
 			I love to learn, and fascinated by computers, and such.
 		</p>
-		<button> see resume </button>
+		<button
+			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80"
+		>
+			see resume
+		</button>
 	</div>
 </container>
 
@@ -58,5 +87,17 @@
 
 	span.scan {
 		@apply border-b-2 border-primaryaccentbg;
+	}
+
+	.aura {
+		@apply w-[400px] h-[400px] absolute rounded-full z-[1] overflow-visible;
+		top: var(--top);
+		left: var(--left);
+		background: radial-gradient(
+			circle,
+			theme(colors.primaryfg/.04) 0%,
+			transparent 30%
+		);
+		pointer-events: none;
 	}
 </style>

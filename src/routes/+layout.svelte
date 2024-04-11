@@ -2,11 +2,6 @@
 	import "../app.css";
 	import Navbar from "$lib/components/Navbar.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-
-	let winHeight = 0;
-	$: {
-		console.log("outter win: ", winHeight);
-	}
 </script>
 
 <svelte:head>
@@ -25,8 +20,6 @@
 		crossorigin="anonymous"
 	/>
 </svelte:head>
-
-<svelte:window bind:outerHeight={winHeight} />
 
 <Navbar />
 <slot />
