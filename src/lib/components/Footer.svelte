@@ -27,7 +27,7 @@
 
 <footer class="bg-primarybg">
 	<div
-		class="mx-auto max-w-7xl px-6 py-12 2xs:flex 2xs:items-center 2xs:justify-between lg:px-8"
+		class="mx-auto max-w-7xl py-12 2xs:flex 2xs:items-center 2xs:justify-between lg:px-8"
 	>
 		<div class="flex justify-center space-x-6 2xs:order-2">
 			<a

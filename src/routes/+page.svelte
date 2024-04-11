@@ -15,38 +15,40 @@
 	});
 </script>
 
-<spacer class="flex flex-grow pt-[8vh] sm:pt-[30vh]"></spacer>
 <container
-	class="text-primaryfg min-h-[92vh] sm:min-h-[70vh] flex flex-grow flex-col max-w-7xl mx-auto"
+	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-8 lg:space-y-0 mt-8 sm:mt-12 lg:mt-20"
 >
-	<div class="flex flex-col">
-		<h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3>
-		<h1 class="flex overflow-clip text-dynamich1 text-primaryfg ml-6">
+	<div class="flex flex-col lg:flex-1">
+		<!-- <h3 class="text-primaryfg w-fit text-dynamich3">Hey, I'm</h3> -->
+		<h1 class="flex overflow-clip text-dynamich3 text-primaryfg">
 			{#each $textArray as charObj, i (charObj)}
 				<span class:scan={charObj.scan} animate:charSwap={i}>
 					{@html charObj.value}
 				</span>
 			{/each}
 		</h1>
-		<container class="min-h-12 mt-4 font-code">
+		<container class="min-h-16 mt-4 text-dynamich6 font-code">
 			{#if $currentAlgorithm?.name && $currentAlgorithm?.complexity}
 				<h6
-					class="text-primaryaccentbg text-dynamich6"
+					class="text-primaryaccentbg text-dynamich5"
 					transition:fade={{ duration: 200 }}
 				>
 					{$currentAlgorithm.name}: {$currentAlgorithm.complexity}
 				</h6>
 			{/if}
 		</container>
+		<p class="text-primaryfg/80 text-dynamichp max-w-[70%] font-light">
+			Computer science student, software developer, and a tech enthusiast.
+		</p>
+	</div>
+	<div class="flex-1 overflow-auto text-dynamicp text-primaryfg/80">
+		<p>
+			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
+			I love to learn, and fascinated by computers, and such.
+		</p>
+		<button> see resume </button>
 	</div>
 </container>
-
-<!-- background: linear-gradient( -->
-<!-- 	90deg, -->
-<!-- 	rgba(2, 0, 36, 1) 0%, -->
-<!-- 	rgba(9, 9, 121, 1) 35%, -->
-<!-- 	theme(colors.primaryaccentbg) 100% -->
-<!-- ); -->
 
 <style lang="postcss">
 	h1 {

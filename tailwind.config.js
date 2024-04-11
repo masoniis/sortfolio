@@ -20,8 +20,10 @@ export default {
 			},
 			fontSize: {
 				dynamich1: "clamp(0.5rem, 13vw, 8.5rem)", // 1rem min, 10% of viewport width, 8.5rem max
-				dynamich3: "clamp(0.5rem, 8vw, 5rem)", // 1rem min, 10% of viewport width, 8.5rem max
-				dynamich6: "clamp(0.5rem, 4vw, 1.5rem)", // 1rem min, 10% of viewport width, 8.5rem max
+				dynamich3: "clamp(0.5rem, 13vw, 5rem)", // 1rem min, 10% of viewport width, 8.5rem max
+				dynamich5: "clamp(0.5rem, 7.5vw, 2.25rem)", // 1rem min, 10% of viewport width, 8.5rem max
+				dynamich6: "clamp(0.5rem, 6vw, 1.5rem)", // 1rem min, 10% of viewport width, 8.5rem max
+				dynamicp: "clamp(0.5rem, 4vw, 1rem)", // 1rem min, 10% of viewport width, 8.5rem max
 			},
 			screens: {
 				'xs': '440px',
