@@ -41,21 +41,21 @@
 
 <svelte:window bind:scrollY />
 
-<div role="region" on:mousemove={handleMouseMove}>
-	<Navbar />
+<div class="overflow-hidden" role="region" on:mousemove={handleMouseMove}>
 	<div class="aura overflow-clip overflow-x-hidden" style={auraStyle}></div>
+	<Navbar />
 	<slot />
 	<Footer />
 </div>
 
 <style lang="postcss">
 	:global(html) {
-		background-color: theme(colors.primarybg);
+		@apply bg-primarybg;
 	}
 
 	:global(body) {
 		@apply mx-4 xs:mx-8 sm:mx-10;
-		@apply overscroll-y-none;
+		@apply overscroll-y-none overflow-x-hidden;
 	}
 
 	.aura {
