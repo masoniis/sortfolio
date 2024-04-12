@@ -67,4 +67,34 @@
 	#beast {
 		@apply selection:bg-primaryfg selection:text-primarybg;
 	}
+
+	/* width */
+	:root::-webkit-scrollbar {
+		width: 7px;
+	}
+
+	/* Track */
+	:root::-webkit-scrollbar-track {
+		background: transparent;
+		border-radius: 100vw;
+		margin-block: 0.25rem;
+	}
+
+	/* Handle */
+	:root::-webkit-scrollbar-thumb {
+		background: theme(colors.primaryaccentbg/.5);
+		border-radius: 100vw;
+	}
+
+	/* Handle on hover */
+	:root::-webkit-scrollbar-thumb:hover {
+		background: theme(colors.primaryaccentbg/.3);
+	}
+
+	@supports (scrollbar-color: theme(colors.primaryaccentbg/.3) transparent) {
+		:root {
+			scrollbar-color: theme(colors.primaryaccentbg/.3) transparent;
+			scrollbar-width: thin;
+		}
+	}
 </style>
