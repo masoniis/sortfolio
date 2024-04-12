@@ -82,19 +82,21 @@
 
 	/* Handle */
 	:root::-webkit-scrollbar-thumb {
-		background: theme(colors.primaryaccentbg/.5);
+		background: theme(colors.primaryaccentfg/.6);
 		border-radius: 100vw;
 	}
 
 	/* Handle on hover */
 	:root::-webkit-scrollbar-thumb:hover {
-		background: theme(colors.primaryaccentbg/.3);
+		background: theme(colors.primaryaccentfg/.6);
 	}
 
-	@supports (scrollbar-color: theme(colors.primaryaccentbg/.3) transparent) {
+	@supports (scrollbar-color: theme(colors.primaryaccentfg/.3) #fff) {
 		:root {
-			scrollbar-color: theme(colors.primaryaccentbg/.3) transparent;
+			scrollbar-color: theme(colors.primaryaccentfg/.6)
+				theme(colors.primaryaccentbg/.3);
 			scrollbar-width: thin;
+			overflow: none;
 		}
 	}
 </style>
