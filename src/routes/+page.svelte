@@ -18,9 +18,9 @@
 <container
 	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-16 lg:space-y-0 mt-8 sm:mt-12 lg:mt-20"
 >
-	<span class="h-full min-h-screen lg:flex-1">
-		<span class="fixed">
-			<div class="sticky top-0 flex flex-col">
+	<span class="min-h-full lg:flex-1">
+		<span class="sticky top-0">
+			<div class="flex flex-col pt-12">
 				<h1 class="flex overflow-clip text-dynamich3 text-primaryfg">
 					{#each $textArray as charObj, i (charObj)}
 						<span class:scan={charObj.scan} animate:charSwap={i}>
@@ -38,7 +38,7 @@
 						</h6>
 					{/if}
 				</container>
-				<p class="text-primaryfg/80 text-dynamichp max-w-[70%] font-light">
+				<p class="text-primaryfg/80 text-dynamichp sm:max-w-[70%] font-light">
 					Computer science student, software developer, and a tech enthusiast.
 				</p>
 				<spacer class="flex-grow" />
@@ -47,7 +47,7 @@
 		</span>
 	</span>
 	<div
-		class="flex-1 flex flex-col overflow-auto text-dynamicp text-primaryfg/80"
+		class="flex-1 flex flex-col pt-12 overflow-auto text-dynamicp text-primaryfg/80"
 	>
 		<p>
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.

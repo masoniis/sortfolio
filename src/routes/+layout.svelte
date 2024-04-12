@@ -46,7 +46,6 @@
 
 	:global(body) {
 		@apply mx-4 xs:mx-8 sm:mx-10;
-		@apply overscroll-y-none overflow-x-hidden;
 	}
 
 	.aura {
