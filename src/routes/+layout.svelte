@@ -9,7 +9,7 @@
 	let prevScrolly = 0;
 	let dY = 0;
 
-	$: auraStyle = `--top: ${mouseY - 200 + dY}px; --left: ${mouseX - 200}px;`;
+	$: auraStyle = `--top: ${mouseY - 300 + dY}px; --left: ${mouseX - 300}px;`;
 
 	$: {
 		dY += scrollY - prevScrolly;
@@ -44,7 +44,7 @@
 <div class="overflow-hidden" role="region" on:mousemove={handleMouseMove}>
 	<div class="aura overflow-clip overflow-x-hidden" style={auraStyle}></div>
 	<Navbar />
-	<slot />
+	<slot class="z-10" />
 	<Footer />
 </div>
 
@@ -59,13 +59,13 @@
 	}
 
 	.aura {
-		@apply w-[400px] h-[400px] absolute rounded-full z-[1] overflow-visible;
+		@apply w-[600px] h-[600px] absolute rounded-full z-[1] overflow-visible;
 		top: var(--top);
 		left: var(--left);
 		background: radial-gradient(
 			circle,
 			theme(colors.primaryfg/.04) 0%,
-			transparent 30%
+			transparent 50%
 		);
 		pointer-events: none;
 	}
