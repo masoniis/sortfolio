@@ -50,7 +50,7 @@
 		</span>
 	</span>
 	<div
-		class="flex-1 flex flex-col pt-12 overflow-auto text-dynamicp text-primaryfg/80"
+		class="flex-1 flex flex-col pt-12 overflow-auto text-dynamicp text-primaryfg/80 space-y-10"
 	>
 		<p>
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
@@ -61,16 +61,40 @@
 		>
 			see resume
 		</button>
-		<spacer class="flex-grow mb-96" />
-		<p>test</p>
-		<spacer class="mb-96" />
-		<p>test</p>
-		<spacer class="mb-96" />
-		<p>test</p>
-		<p>test</p>
-		<spacer class="mb-96" />
-		<p>test</p>
-		<p>test</p>
+		<h3>Things projects</h3>
+		<div class="card">
+			<h4>Project 1</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
+				litora torquent per conubia nostra, per inceptos himenaeos.
+			</p>
+		</div>
+		<div class="card">
+			<h4>Project 1</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
+				litora torquent per conubia nostra, per inceptos himenaeos.
+			</p>
+		</div>
+		<div class="card">
+			<h4>Project 1</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
+				litora torquent per conubia nostra, per inceptos himenaeos.
+			</p>
+		</div>
 	</div>
 </container>
 
@@ -82,5 +106,9 @@
 
 	span.scan {
 		@apply border-b-2 border-primaryaccentbg;
+	}
+
+	.card {
+		@apply hover:bg-primaryaccentbg/10 p-4 rounded-md transition-colors ease-in-out duration-200;
 	}
 </style>
