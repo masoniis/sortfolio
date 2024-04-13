@@ -1,0 +1,42 @@
+<script>
+	import Card from "$lib/components/Card.svelte";
+	import { ArrowIcon } from "$lib/components/icons";
+</script>
+
+<div class="flex flex-col">
+	<h3 class="text-dynamich6 font-extrabold">Projects</h3>
+	<spacer class="h-4"></spacer>
+	<Card
+		img="images/sedmos.png"
+		href="https://sedmos.vercel.app/"
+		github="https://github.com/HammerMonkeys/sedmos"
+	>
+		<span slot="title">Sedmos</span>
+		A desmos-like graphing calculator with the ability to graph vector fields, something
+		even desmos itself fails at.
+	</Card>
+	<Card
+		img="images/rush.png"
+		href="https://github.com/HammerMonkeys/sedmos"
+		github="https://github.com/masoniis/rush"
+	>
+		<span slot="title">Rush</span>
+		A rudimentary shell application written in Rust.
+	</Card>
+	<Card
+		img="images/quantumchart.png"
+		href="https://quantumchart.vercel.app"
+		github="https://github.com/masoniis/quantum-chart"
+	>
+		<span slot="title">Quantum Chart</span>
+		A competition-winning website design project made for the FBLA student competition
+		in 2021.
+	</Card>
+	<a
+		href="projects"
+		class="text-primaryfg hover:text-primaryaccentbg group/link"
+	>
+		View full project archive
+		<ArrowIcon />
+	</a>
+</div>
