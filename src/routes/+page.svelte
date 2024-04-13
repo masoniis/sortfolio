@@ -5,8 +5,7 @@
 	import { fade } from "svelte/transition";
 	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
-	import GithubIcon from "$lib/components/icons/GithubIcon.svelte";
-	import LinkedInIcon from "$lib/components/icons/LinkedInIcon.svelte";
+	import { ArrowIcon, GithubIcon, LinkedinIcon } from "$lib/components/icons";
 	import Card from "$lib/components/Card.svelte";
 
 	onMount(() => {
@@ -44,8 +43,8 @@
 					Computer science student, software developer, and a tech enthusiast.
 				</p>
 				<div class="flex flex-row space-x-2 pt-6">
-					<GithubIcon />
-					<LinkedInIcon />
+					<icons.GithubIcon />
+					<icons.LinkedinIcon />
 				</div>
 			</div>
 		</span>
@@ -56,6 +55,10 @@
 		<p>
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
 			I love to learn, discover, and create.
+			<a href="about" class="hover:text-primaryaccentbg group/link">
+				More about me
+				<ArrowIcon />
+			</a>
 		</p>
 		<a
 			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80 w-fit font-semibold transition-colors duration-200"
@@ -64,8 +67,9 @@
 			See resume
 		</a>
 
-		<div class="flex flex-col space-y-8">
+		<div class="flex flex-col">
 			<h3 class="text-dynamich6 font-extrabold">Projects</h3>
+			<spacer class="h-4"></spacer>
 			<Card
 				img="images/sedmos.png"
 				href="https://sedmos.vercel.app/"
@@ -92,9 +96,21 @@
 				A competition-winning website design project made for the FBLA student competition
 				in 2021.
 			</Card>
-			<a href="projects" class="text-primaryfg hover:text-primaryaccentbg">
+			<a
+				href="projects"
+				class="text-primaryfg hover:text-primaryaccentbg group/link"
+			>
 				View full project archive
-			</a><portal id="exampleportal" src="https://example.com/"></portal>
+				<ArrowIcon />
+			</a>
+		</div>
+
+		<div class="flex flex-col">
+			<h3 class="text-dynamich6 font-extrabold">Skills</h3>
+		</div>
+
+		<div class="flex flex-col">
+			<h3 class="text-dynamich6 font-extrabold">Get in touch</h3>
 		</div>
 	</div>
 </container>

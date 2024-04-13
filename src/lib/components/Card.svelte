@@ -1,6 +1,5 @@
 <script lang="ts">
-	import ArrowIcon from "$lib/components/icons/ArrowIcon.svelte";
-	import GithubIcon from "$lib/components/icons/GithubIcon.svelte";
+	import { ArrowIcon, GithubIcon } from "$lib/components/icons";
 
 	export let img = "https://via.placeholder.com/192x128";
 	export let href = "";
@@ -34,6 +33,7 @@
 		/>
 	</div>
 </a>
+<spacer class="h-12"></spacer>
 
 <style lang="postcss">
 	.card {

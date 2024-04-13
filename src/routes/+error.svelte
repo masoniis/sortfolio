@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowIcon from "$lib/components/icons/ArrowIcon.svelte";
+	import { ArrowIcon } from "$lib/components/icons";
 	import { page } from "$app/stores";
 </script>
 
