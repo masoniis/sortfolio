@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
-	import { textArray } from "$lib/functions/store";
-	import { currentAlgorithm } from "$lib/functions/store";
+	import { textArray, currentAlgorithm } from "$lib/functions/store";
 	import { fade } from "svelte/transition";
 	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
+	import GithubIcon from "$lib/components/icons/GithubIcon.svelte";
+	import LinkedInIcon from "$lib/components/icons/LinkedInIcon.svelte";
 
 	onMount(() => {
 		if (get(currentAlgorithm).name == "start") {
@@ -16,7 +17,7 @@
 </script>
 
 <container
-	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-16 lg:space-y-0 mt-8 sm:mt-12 lg:mt-20"
+	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-16 lg:space-y-0"
 >
 	<span class="min-h-full lg:flex-1">
 		<span class="sticky top-0">
@@ -41,8 +42,10 @@
 				<p class="text-primaryfg/80 text-dynamichp sm:max-w-[70%] font-light">
 					Computer science student, software developer, and a tech enthusiast.
 				</p>
-				<spacer class="flex-grow" />
-				<p class="pb-60">bottom</p>
+				<div class="flex flex-row space-x-2 pt-6">
+					<GithubIcon />
+					<LinkedInIcon />
+				</div>
 			</div>
 		</span>
 	</span>
