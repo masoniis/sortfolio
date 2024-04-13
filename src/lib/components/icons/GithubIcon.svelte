@@ -1,8 +1,9 @@
-<script context="module">
+<script>
+	export let href = "https://github.com/masoniis";
 </script>
 
 <a
-	href="https://github.com/masoniis"
+	{href}
 	class="text-primaryfg hover:text-primaryaccentbg transition-colors ease-in-out duration-300"
 >
 	<span class="sr-only">GitHub</span>

@@ -55,7 +55,7 @@
 	>
 		<p>
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
-			I love to learn, and fascinated by computers, and such.
+			I love to learn, discover, and create.
 		</p>
 		<a
 			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80"
@@ -64,26 +64,38 @@
 			see resume
 		</a>
 
-		<h3>Things projects</h3>
-		<Card img="images/sedmos.png">
-			<span slot="title">Sedmos</span>
-			A desmos-like graphing calculator with the ability to graph vector fields,
-			something even desmos itself fails at.
-		</Card>
-		<Card>
-			<span slot="title">Rush</span>
-			A rudimentary shell application written in Rust.
-		</Card>
-		<Card>
-			<span slot="title">Quantum Chart</span>
-			A competition-winning website design project made for the FBLA student competition
-			in 2021.
-		</Card>
-		<a href="projects" class="text-primaryfg hover:text-primaryaccentbg">
-			View full project archive
-		</a>
-	</div></container
->
+		<div class="flex flex-col space-y-8">
+			<h3 class="text-dynamich6 font-extrabold">Projects</h3>
+			<Card
+				img="images/sedmos.png"
+				href="https://sedmos.vercel.app/"
+				github="https://github.com/HammerMonkeys/sedmos"
+			>
+				<span slot="title">Sedmos</span>
+				A desmos-like graphing calculator with the ability to graph vector fields,
+				something even desmos itself fails at.
+			</Card>
+			<Card
+				img="images/sedmos.png"
+				href="https://github.com/HammerMonkeys/sedmos"
+			>
+				<span slot="title">Rush</span>
+				A rudimentary shell application written in Rust.
+			</Card>
+			<Card
+				img="images/sedmos.png"
+				href="https://github.com/HammerMonkeys/sedmos"
+			>
+				<span slot="title">Quantum Chart</span>
+				A competition-winning website design project made for the FBLA student competition
+				in 2021.
+			</Card>
+			<a href="projects" class="text-primaryfg hover:text-primaryaccentbg">
+				View full project archive
+			</a>
+		</div>
+	</div>
+</container>
 
 <style lang="postcss">
 	h1 {
