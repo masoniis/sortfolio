@@ -58,10 +58,10 @@
 			I love to learn, discover, and create.
 		</p>
 		<a
-			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80"
+			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80 w-fit font-semibold transition-colors duration-200"
 			href="masonbott_resume.pdf"
 		>
-			see resume
+			See resume
 		</a>
 
 		<div class="flex flex-col space-y-8">
@@ -76,15 +76,17 @@
 				something even desmos itself fails at.
 			</Card>
 			<Card
-				img="images/sedmos.png"
+				img="images/rush.png"
 				href="https://github.com/HammerMonkeys/sedmos"
+				github="https://github.com/masoniis/rush"
 			>
 				<span slot="title">Rush</span>
 				A rudimentary shell application written in Rust.
 			</Card>
 			<Card
-				img="images/sedmos.png"
-				href="https://github.com/HammerMonkeys/sedmos"
+				img="images/quantumchart.png"
+				href="https://quantumchart.vercel.app"
+				github="https://github.com/masoniis/quantum-chart"
 			>
 				<span slot="title">Quantum Chart</span>
 				A competition-winning website design project made for the FBLA student competition
@@ -92,7 +94,7 @@
 			</Card>
 			<a href="projects" class="text-primaryfg hover:text-primaryaccentbg">
 				View full project archive
-			</a>
+			</a><portal id="exampleportal" src="https://example.com/"></portal>
 		</div>
 	</div>
 </container>
