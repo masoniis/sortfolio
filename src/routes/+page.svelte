@@ -7,6 +7,7 @@
 	import { onMount } from "svelte";
 	import GithubIcon from "$lib/components/icons/GithubIcon.svelte";
 	import LinkedInIcon from "$lib/components/icons/LinkedInIcon.svelte";
+	import Card from "$lib/components/Card.svelte";
 
 	onMount(() => {
 		if (get(currentAlgorithm).name == "start") {
@@ -56,47 +57,33 @@
 			I'm a 2nd year in Computer Science at the University of Colorado Boulder.
 			I love to learn, and fascinated by computers, and such.
 		</p>
-		<button
+		<a
 			class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80"
+			href="masonbott_resume.pdf"
 		>
 			see resume
-		</button>
+		</a>
+
 		<h3>Things projects</h3>
-		<div class="card">
-			<h4>Project 1</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-				litora torquent per conubia nostra, per inceptos himenaeos.
-			</p>
-		</div>
-		<div class="card">
-			<h4>Project 1</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-				litora torquent per conubia nostra, per inceptos himenaeos.
-			</p>
-		</div>
-		<div class="card">
-			<h4>Project 1</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-				odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-				quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-				mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-				Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-				litora torquent per conubia nostra, per inceptos himenaeos.
-			</p>
-		</div>
-	</div>
-</container>
+		<Card img="images/sedmos.png">
+			<span slot="title">Sedmos</span>
+			A desmos-like graphing calculator with the ability to graph vector fields,
+			something even desmos itself fails at.
+		</Card>
+		<Card>
+			<span slot="title">Rush</span>
+			A rudimentary shell application written in Rust.
+		</Card>
+		<Card>
+			<span slot="title">Quantum Chart</span>
+			A competition-winning website design project made for the FBLA student competition
+			in 2021.
+		</Card>
+		<a href="projects" class="text-primaryfg hover:text-primaryaccentbg">
+			View full project archive
+		</a>
+	</div></container
+>
 
 <style lang="postcss">
 	h1 {
@@ -106,9 +93,5 @@
 
 	span.scan {
 		@apply border-b-2 border-primaryaccentbg;
-	}
-
-	.card {
-		@apply hover:bg-primaryaccentbg/10 p-4 rounded-md transition-colors ease-in-out duration-200;
 	}
 </style>
