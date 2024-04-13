@@ -33,7 +33,7 @@
 			</h6>
 		{/if}
 	</container>
-	<p class="text-primaryfg/80 text-dynamichp sm:max-w-[70%] font-light">
+	<p class="text-primaryfg/80 text-dynamicp sm:max-w-[70%] font-light">
 		Computer science student, software developer, and a tech enthusiast.
 	</p>
 	<div class="flex flex-row space-x-2 pt-6">

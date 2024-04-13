@@ -3,7 +3,11 @@
 </script>
 
 <div class="flex flex-col">
-	<h3 class="text-dynamich6 font-extrabold">Skills</h3>
+	<h3
+		class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2"
+	>
+		Skills
+	</h3>
 	<spacer class="h-4"></spacer>
 	<div class="grid cols-4 grid-flow-col-dense gap-4 justify-start">
 		<HTML5Icon />
@@ -24,7 +28,8 @@
 	}
 
 	:global(.skill:hover::before) {
-		@apply absolute bg-primaryaccentbg/70 rounded-lg text-black top-0 left-0 w-full h-full flex flex-col items-center justify-center overflow-auto;
+		@apply bg-primaryaccentbg/70 text-primaryaccentfg font-semibold;
+		@apply absolute rounded-lg top-0 left-0 w-full h-full flex flex-col items-center justify-center overflow-auto;
 		content: attr(data-hover-text);
 	}
 </style>

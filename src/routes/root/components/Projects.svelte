@@ -4,7 +4,11 @@
 </script>
 
 <div class="flex flex-col">
-	<h3 class="text-dynamich6 font-extrabold">Projects</h3>
+	<h3
+		class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2"
+	>
+		Projects
+	</h3>
 	<spacer class="h-4"></spacer>
 	<Card
 		img="images/sedmos.png"
