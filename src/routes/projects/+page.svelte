@@ -139,20 +139,27 @@
 						</td>
 						<td class="px-3 py-4 text-sm text-primaryfg">
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
-								<button
-									class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer"
-									on:click={() => {
-										if (projectFilter.includes(tech)) {
+								{#if projectFilter.includes(tech)}
+									<button
+										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentfg rounded-full bg-primaryaccentbg/80 m-1 hover:cursor-pointer"
+										on:click={() => {
 											projectFilter = projectFilter.filter(
 												(item) => item !== tech,
 											);
-										} else {
+										}}
+									>
+										{tech}
+									</button>
+								{:else}
+									<button
+										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer"
+										on:click={() => {
 											projectFilter = [...projectFilter, tech];
-										}
-									}}
-								>
-									{tech}
-								</button>
+										}}
+									>
+										{tech}
+									</button>
+								{/if}
 							{/each}
 						</td>
 					</tr>
