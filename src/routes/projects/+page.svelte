@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SortArrowIcon } from "$lib/components/icons/index";
+	import { SortArrowIcon, ArrowIcon } from "$lib/components/icons/index";
 
 	let projects = [
 		{
@@ -45,7 +45,11 @@
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
 >
-	<a href="/" class="text-dynamich6 text-primaryaccentbg">Mason Bott</a>
+	<a href="/" class="text-dynamich6 text-primaryaccentbg group/link">
+		<ArrowIcon />
+
+		Mason Bott
+	</a>
 	<h1 class="text-5xl">All my projects</h1>
 	<div class="-mx-4 mt-8 sm:-mx-0">
 		<table class="min-w-full divide-y divide-gray-300">
