@@ -5,16 +5,16 @@
 		BackArrowIcon,
 	} from "$lib/components/icons/index";
 
+	interface Link {
+		title: string;
+		url: string;
+	}
+
 	interface Project {
 		title: string;
 		year: number;
 		technologies: string[];
-		links?: Link[];
-	}
-
-	interface Link {
-		title: string;
-		url: string;
+		links: Link[];
 	}
 
 	let projects: Project[] = [
@@ -84,8 +84,7 @@
 		href="/"
 		class="text-dynamich6 text-primaryaccentbg group/link items-center flex flex-row"
 	>
-		<BackArrowIcon color="fill-primaryaccentbg" />
-
+		<BackArrowIcon />
 		Mason Bott
 	</a>
 	<h1 class="text-5xl">All my projects</h1>
@@ -147,7 +146,7 @@
 								<dd
 									class="mt-1 truncate text-primaryfg sm:hidden flex flex-col"
 								>
-									{#each project.links ? project.links : ["N/A"] as link}
+									{#each project.links as link}
 										<a
 											href={link.url}
 											class="group/link hover:text-primaryaccentbg"
@@ -165,7 +164,7 @@
 						<td
 							class="hidden px-3 py-4 text-sm text-primaryfg sm:flex sm:flex-col sm:justify-center h-full"
 						>
-							{#each project.links ? project.links : ["N/A"] as link}
+							{#each project.links as link}
 								<a
 									href={link.url}
 									class="text-primaryfg group/link hover:text-primaryaccentbg"
@@ -177,27 +176,23 @@
 						</td>
 						<td class="px-3 py-4 text-sm text-primaryfg">
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
-								{#if projectFilter.includes(tech)}
-									<button
-										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentfg rounded-full bg-primaryaccentbg/80 m-1 hover:cursor-pointer hover:bg-primaryaccentbg/90"
-										on:click={() => {
+								<button
+									class="inline-block px-2 py-1 text-xs font-semibold rounded-full m-1 hover:cursor-pointer transition-colors duration-200
+									{projectFilter.includes(tech)
+										? 'bg-primaryaccentbg text-primaryaccentfg hover:bg-primaryaccentbg/80'
+										: 'bg-primaryaccentbg/20 text-primaryaccentbg hover:bg-primaryaccentbg/30'}"
+									on:click={() => {
+										if (!projectFilter.includes(tech)) {
+											projectFilter = [...projectFilter, tech];
+										} else {
 											projectFilter = projectFilter.filter(
 												(item) => item !== tech,
 											);
-										}}
-									>
-										{tech}
-									</button>
-								{:else}
-									<button
-										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer hover:bg-primaryaccentbg/40"
-										on:click={() => {
-											projectFilter = [...projectFilter, tech];
-										}}
-									>
-										{tech}
-									</button>
-								{/if}
+										}
+									}}
+								>
+									{tech}
+								</button>
 							{/each}
 						</td>
 					</tr>
