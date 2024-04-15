@@ -1,14 +1,15 @@
 <script lang="ts">
-	export let rotate = 0;
-	export let color = "currentColor";
+	export let ascending = true;
+	let color = "fill-green-500";
 
-	$: rotation = `rotate(${rotate - 45}deg)`;
+	$: rotation = `rotate(${ascending ? 135 : -45}deg)`;
+	$: color = ascending ? "fill-red-500" : "fill-green-500";
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 20 20"
-	class="{color} inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+	class="{color} inline-block h-4 w-4 shrink-0 transition-all group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px duration-200"
 	aria-hidden="true"
 	style:transform={rotation}
 >

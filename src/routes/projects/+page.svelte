@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { SortArrowIcon, ArrowIcon } from "$lib/components/icons/index";
+	import {
+		SortArrowIcon,
+		ArrowIcon,
+		BackArrowIcon,
+	} from "$lib/components/icons/index";
 
 	interface Project {
 		title: string;
@@ -51,7 +55,7 @@
 		},
 	];
 
-	let curSort = ["year", "asc"];
+	let curSort = ["year", "desc"];
 
 	function sortByYear() {
 		if (curSort[0] === "year") {
@@ -61,9 +65,9 @@
 		}
 
 		if (curSort[1] === "desc") {
-			projects = projects.sort((a, b) => a.year - b.year);
-		} else {
 			projects = projects.sort((a, b) => b.year - a.year);
+		} else {
+			projects = projects.sort((a, b) => a.year - b.year);
 		}
 	}
 
@@ -76,8 +80,11 @@
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
 >
-	<a href="/" class="text-dynamich6 text-primaryaccentbg group/link">
-		<SortArrowIcon rotate={-90} color="fill-primaryaccentbg" />
+	<a
+		href="/"
+		class="text-dynamich6 text-primaryaccentbg group/link items-center flex flex-row"
+	>
+		<BackArrowIcon color="fill-primaryaccentbg" />
 
 		Mason Bott
 	</a>
@@ -98,11 +105,7 @@
 						on:click={sortByYear}
 					>
 						Year
-						{#if curSort[0] == "year" && curSort[1] == "asc"}
-							<SortArrowIcon rotate={0} color="fill-green-500" />
-						{:else if curSort[0] == "year" && curSort[1] == "desc"}
-							<SortArrowIcon rotate={180} color="fill-red-500" />
-						{/if}
+						<SortArrowIcon ascending={curSort[1] == "asc"} />
 					</th>
 					<th
 						scope="col"
@@ -115,16 +118,15 @@
 						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg flex items-start"
 					>
 						Technologies
-						{#if projectFilter.length > 0}
-							<button
-								class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 ml-2"
-								on:click={() => {
-									projectFilter = [];
-								}}
-							>
-								Clear
-							</button>
-						{/if}
+						<button
+							class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 ml-2 transition-opacity duration-200 hover:cursor-pointer hover:bg-primaryaccentbg/40"
+							class:opacity-0={projectFilter.length === 0}
+							on:click={() => {
+								projectFilter = [];
+							}}
+						>
+							Clear
+						</button>
 					</th>
 				</tr>
 			</thead>
@@ -140,7 +142,7 @@
 							{project.title}
 							<dl class="font-normal lg:hidden">
 								<dt class="sr-only">{project.title}</dt>
-								<dd class="mt-1 truncate text-primaryfg">{project.year}</dd>
+								<dd class="mt-1 truncate text-primaryfg/70">{project.year}</dd>
 								<dt class="sr-only sm:hidden">{project.technologies}</dt>
 								<dd
 									class="mt-1 truncate text-primaryfg sm:hidden flex flex-col"
@@ -177,7 +179,7 @@
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
 								{#if projectFilter.includes(tech)}
 									<button
-										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentfg rounded-full bg-primaryaccentbg/80 m-1 hover:cursor-pointer"
+										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentfg rounded-full bg-primaryaccentbg/80 m-1 hover:cursor-pointer hover:bg-primaryaccentbg/90"
 										on:click={() => {
 											projectFilter = projectFilter.filter(
 												(item) => item !== tech,
@@ -188,7 +190,7 @@
 									</button>
 								{:else}
 									<button
-										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer"
+										class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer hover:bg-primaryaccentbg/40"
 										on:click={() => {
 											projectFilter = [...projectFilter, tech];
 										}}
