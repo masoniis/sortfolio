@@ -163,7 +163,7 @@
 							{project.year}
 						</td>
 						<td
-							class="hidden px-3 py-4 text-sm text-primaryfg sm:flex sm:flex-col"
+							class="hidden px-3 py-4 text-sm text-primaryfg sm:flex sm:flex-col sm:justify-center h-full"
 						>
 							{#each project.links ? project.links : ["N/A"] as link}
 								<a
@@ -206,3 +206,9 @@
 		</table>
 	</div>
 </container>
+
+<style>
+	table {
+		height: 100%;
+	}
+</style>
