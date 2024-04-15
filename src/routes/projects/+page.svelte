@@ -118,7 +118,7 @@
 					>
 						Technologies
 						<button
-							class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 ml-2 transition-opacity duration-200 hover:cursor-pointer hover:bg-primaryaccentbg/40"
+							class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 ml-2 transition-opacity duration-200 hover:cursor-pointer hover:bg-primaryaccentbg/30"
 							class:opacity-0={projectFilter.length === 0}
 							on:click={() => {
 								projectFilter = [];
