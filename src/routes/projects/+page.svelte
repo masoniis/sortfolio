@@ -55,7 +55,7 @@
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
 >
 	<a href="/" class="text-dynamich6 text-primaryaccentbg group/link">
-		<ArrowIcon />
+		<SortArrowIcon rotate={-90} color="fill-primaryaccentbg" />
 
 		Mason Bott
 	</a>
