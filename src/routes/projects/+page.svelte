@@ -90,7 +90,7 @@
 					</th>
 					<th
 						scope="col"
-						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg"
+						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg flex items-start"
 					>
 						Technologies
 						{#if projectFilter.length > 0}
@@ -100,7 +100,7 @@
 									projectFilter = [];
 								}}
 							>
-								Clear filters
+								Clear
 							</button>
 						{/if}
 					</th>
@@ -140,7 +140,7 @@
 						<td class="px-3 py-4 text-sm text-primaryfg">
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
 								<button
-									class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 mx-1 hover:cursor-pointer"
+									class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 m-1 hover:cursor-pointer"
 									on:click={() => {
 										if (projectFilter.includes(tech)) {
 											projectFilter = projectFilter.filter(
