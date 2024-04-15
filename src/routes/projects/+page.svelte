@@ -5,7 +5,12 @@
 		title: string;
 		year: number;
 		technologies: string[];
-		link: string;
+		links?: Link[];
+	}
+
+	interface Link {
+		title: string;
+		url: string;
 	}
 
 	let projects: Project[] = [
@@ -13,19 +18,36 @@
 			title: "Sedmos",
 			year: 2024,
 			technologies: ["HTML", "CSS", "TS", "Tailwind"],
-			link: "https://sedmos.vercel.app/",
+			links: [
+				{
+					title: "Live site",
+					url: "https://sedmos.vercel.app/",
+				},
+				{
+					title: "Github repo",
+					url: "https://github.com/hammermonkeys/sedmos",
+				},
+			],
 		},
 		{
 			title: "Rush",
 			year: 2023,
 			technologies: ["Rust"],
-			link: "https://google.com",
+			links: [
+				{ title: "Github repo", url: "https://github.com/masoniis/rush" },
+			],
 		},
 		{
 			title: "QuantumChart",
 			year: 2021,
 			technologies: ["HTML", "CSS", "TS", "Tailwind"],
-			link: "https://google.com",
+			links: [
+				{ title: "Live site", url: "https://quantumchart.vercel.app/" },
+				{
+					title: "Github repo",
+					url: "https://github.com/masoniis/quantumchart",
+				},
+			],
 		},
 	];
 
@@ -72,7 +94,7 @@
 					</th>
 					<th
 						scope="col"
-						class="sticky top-0 z-10 hidden px-3 py-3.5 text-left text-sm font-semibold text-primaryfg lg:table-cell"
+						class="sticky top-0 z-10 hidden px-3 py-3.5 text-left text-sm font-semibold text-primaryfg lg:table-cell cursor-pointer"
 						on:click={sortByYear}
 					>
 						Year
@@ -86,7 +108,7 @@
 						scope="col"
 						class="sticky top-0 z-10 hidden px-3 py-3.5 text-left text-sm font-semibold text-primaryfg sm:table-cell"
 					>
-						Link
+						Links
 					</th>
 					<th
 						scope="col"
@@ -120,22 +142,36 @@
 								<dt class="sr-only">{project.title}</dt>
 								<dd class="mt-1 truncate text-primaryfg">{project.year}</dd>
 								<dt class="sr-only sm:hidden">{project.technologies}</dt>
-								<dd class="mt-1 truncate text-primaryfg sm:hidden">
-									{project.link}
+								<dd
+									class="mt-1 truncate text-primaryfg sm:hidden flex flex-col"
+								>
+									{#each project.links ? project.links : ["N/A"] as link}
+										<a
+											href={link.url}
+											class="group/link hover:text-primaryaccentbg"
+										>
+											{link.title}
+											<ArrowIcon />
+										</a>
+									{/each}
 								</dd>
 							</dl>
 						</td>
 						<td class="hidden px-3 py-4 text-sm text-primaryfg lg:table-cell">
 							{project.year}
 						</td>
-						<td class="hidden px-3 py-4 text-sm text-primaryfg sm:table-cell">
-							<a
-								href={project.link}
-								class="text-primaryfg group/link hover:text-primaryaccentbg"
-							>
-								{project.link}
-								<ArrowIcon />
-							</a>
+						<td
+							class="hidden px-3 py-4 text-sm text-primaryfg sm:flex sm:flex-col"
+						>
+							{#each project.links ? project.links : ["N/A"] as link}
+								<a
+									href={link.url}
+									class="text-primaryfg group/link hover:text-primaryaccentbg"
+								>
+									{link.title}
+									<ArrowIcon />
+								</a>
+							{/each}
 						</td>
 						<td class="px-3 py-4 text-sm text-primaryfg">
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
