@@ -1,12 +1,19 @@
 <script lang="ts">
 	import { SortArrowIcon, ArrowIcon } from "$lib/components/icons/index";
 
-	let projects = [
+	interface Project {
+		title: string;
+		year: number;
+		technologies: string[];
+		link: string;
+	}
+
+	let projects: Project[] = [
 		{
 			title: "Sedmos",
 			year: 2024,
 			technologies: ["HTML", "CSS", "TS", "Tailwind"],
-			link: "https://google.com",
+			link: "https://sedmos.vercel.app/",
 		},
 		{
 			title: "Rush",
@@ -39,6 +46,8 @@
 	}
 
 	$: projects = projects;
+
+	let projectFilter: String[] = [];
 </script>
 
 <spacer class="flex flex-grow pt-16 sm:pt-20"></spacer>
@@ -84,11 +93,24 @@
 						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg"
 					>
 						Technologies
+						{#if projectFilter.length > 0}
+							<button
+								class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 ml-2"
+								on:click={() => {
+									projectFilter = [];
+								}}
+							>
+								Clear filters
+							</button>
+						{/if}
 					</th>
 				</tr>
 			</thead>
 			<tbody class="divide-y divide-gray-200 bg-primarybg">
-				{#each projects as project}
+				{#each projects.filter((project) => {
+					if (projectFilter.length === 0) return true;
+					return project.technologies.some( (tech) => projectFilter.includes(tech), );
+				}) as project}
 					<tr>
 						<td
 							class="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-primaryfg sm:w-auto sm:max-w-none sm:pl-0"
@@ -107,15 +129,30 @@
 							{project.year}
 						</td>
 						<td class="hidden px-3 py-4 text-sm text-primaryfg sm:table-cell">
-							{project.link}
+							<a
+								href={project.link}
+								class="text-primaryfg group/link hover:text-primaryaccentbg"
+							>
+								{project.link}
+								<ArrowIcon />
+							</a>
 						</td>
 						<td class="px-3 py-4 text-sm text-primaryfg">
 							{#each project.technologies ? project.technologies : ["N/A"] as tech}
-								<span
-									class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full"
+								<button
+									class="inline-block px-2 py-1 text-xs font-semibold text-primaryaccentbg rounded-full bg-primaryaccentbg/20 mx-1 hover:cursor-pointer"
+									on:click={() => {
+										if (projectFilter.includes(tech)) {
+											projectFilter = projectFilter.filter(
+												(item) => item !== tech,
+											);
+										} else {
+											projectFilter = [...projectFilter, tech];
+										}
+									}}
 								>
 									{tech}
-								</span>
+								</button>
 							{/each}
 						</td>
 					</tr>
