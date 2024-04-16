@@ -8,17 +8,17 @@ import { msInterval } from "./autoplay";
 
 export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });
+	let counter = 0;
 
-	// keep shuffling the array until it is sorted
+	// keep shuffling the array until it is sorted but actually "get lucky" after 9+= iterations
 	while (!isSorted(store)) {
-		if (Math.random() < 0.08) {
+		if (Math.random() < 0.25 && counter > 9) {
 			unshuffle(store);
 		} else {
 			shuffle(store);
 		}
 
-		console.log("MS IN SORT: " + ms.interval);
-
+		counter++;
 		await wait(ms.interval);
 	}
 
