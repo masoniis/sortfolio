@@ -22,5 +22,8 @@
 		"typescript": "^5.4.4",
 		"vite": "^5.2.8"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@vercel/analytics": "^1.2.2"
+	}
 }
