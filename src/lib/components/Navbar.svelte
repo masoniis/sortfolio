@@ -15,7 +15,7 @@
 					id="icon"
 					class="flex flex-shrink-0 items-center hover:border-b-0 p-4 m-[-16px]"
 				>
-					<img class="h-8 w-auto text-primaryfg" src="knight.svg" alt="Icon" />
+					<img class="h-8 w-auto text-primaryfg" src="favicon.svg" alt="Icon" />
 				</a>
 			</div>
 			<div></div>

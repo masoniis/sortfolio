@@ -45,7 +45,7 @@
 	class="selection:bg-primaryaccentbg selection:text-primaryaccentfg"
 >
 	<div class="aura" style={auraStyle}></div>
-	<Navbar />
+	<!-- <Navbar /> -->
 	<slot class="z-10" />
 	<Footer />
 </div>
