@@ -6,6 +6,7 @@
 	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
 	import { GithubIcon, LinkedinIcon } from "$lib/components/icons";
+	import Sortsettings from "./Sortsettings.svelte";
 
 	onMount(() => {
 		if (get(currentAlgorithm).name == "start") {
@@ -18,7 +19,11 @@
 <div class="flex flex-col">
 	<h1 class="flex overflow-clip text-dynamich3 text-primaryfg pt-16 sm:pt-24">
 		{#each $textArray as charObj, i (charObj)}
-			<span class:scan={charObj.scan} animate:charSwap={i}>
+			<span
+				class:scan={charObj.scan}
+				class:final={charObj.final}
+				animate:charSwap={i}
+			>
 				{@html charObj.value}
 			</span>
 		{/each}
@@ -40,6 +45,7 @@
 		<GithubIcon />
 		<LinkedinIcon />
 	</div>
+	<Sortsettings />
 </div>
 
 <style lang="postcss">
@@ -49,6 +55,10 @@
 	}
 
 	span.scan {
-		@apply border-b-2 border-primaryaccentbg;
+		@apply bg-primaryaccentbg/20 rounded-lg;
+	}
+
+	span.final {
+		@apply text-primaryaccentbg;
 	}
 </style>

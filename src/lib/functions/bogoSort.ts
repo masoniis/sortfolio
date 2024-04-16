@@ -4,28 +4,22 @@ import { shuffle } from "./shuffle";
 import { unshuffle } from "./unshuffle";
 import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
+import { msInterval } from "./autoplay";
 
-export async function bogoSort(store: Writable<CharObj[]>) {
-	if (get(currentAlgorithm)?.name
-		== 'Bogosort') {
-		return;
-	}
-	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; return alg; });
-	currentAlgorithm.update((alg) => { alg.complexity = 'O(n*n!)'; return alg; });
+export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
+	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });
 
 	// keep shuffling the array until it is sorted
 	while (!isSorted(store)) {
-		if (get(currentAlgorithm).name !== 'Bogosort') { // If algorithm changes, stop doing BOGO
-			return;
-		}
-
-		if (Math.random() < 0.09) {
+		if (Math.random() < 0.08) {
 			unshuffle(store);
 		} else {
 			shuffle(store);
 		}
 
-		await wait(200);
+		console.log("MS IN SORT: " + ms.interval);
+
+		await wait(ms.interval);
 	}
 
 	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
