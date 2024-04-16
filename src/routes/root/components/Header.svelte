@@ -22,7 +22,7 @@
 			<span
 				class:scan={charObj.scan}
 				class:final={charObj.final}
-				class="transition-colors duration-1000"
+				class="transition-colors duration-500"
 				animate:charSwap={i}
 			>
 				{@html charObj.value}
@@ -56,10 +56,10 @@
 	}
 
 	span.scan {
-		@apply bg-primaryaccentbg/20;
+		@apply bg-primaryaccentbg/30;
 	}
 
 	span.final {
-		@apply text-primaryaccentbg;
+		@apply underline decoration-primaryaccentbg/80 underline-offset-1;
 	}
 </style>
