@@ -15,8 +15,8 @@
 	});
 </script>
 
-<div class="flex flex-col pt-12">
-	<h1 class="flex overflow-clip text-dynamich3 text-primaryfg">
+<div class="flex flex-col">
+	<h1 class="flex overflow-clip text-dynamich3 text-primaryfg pt-16 sm:pt-24">
 		{#each $textArray as charObj, i (charObj)}
 			<span class:scan={charObj.scan} animate:charSwap={i}>
 				{@html charObj.value}

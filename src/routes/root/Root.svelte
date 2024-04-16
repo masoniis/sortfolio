@@ -3,6 +3,7 @@
 	import Skills from "./components/Skills.svelte";
 	import Header from "./components/Header.svelte";
 	import About from "./components/About.svelte";
+	import Spacer from "$lib/components/Spacer.svelte";
 </script>
 
 <container
@@ -14,7 +15,7 @@
 		</span>
 	</span>
 	<div
-		class="flex-1 flex flex-col pt-24 lg:pt-12 overflow-auto text-dynamicp text-primaryfg/80 space-y-10"
+		class="flex-1 flex flex-col ptpt-16 sm:pt-24 overflow-auto text-dynamicp text-primaryfg/80 space-y-10"
 	>
 		<About />
 

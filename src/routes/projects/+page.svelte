@@ -4,6 +4,7 @@
 		ArrowIcon,
 		BackArrowIcon,
 	} from "$lib/components/icons/index";
+	import Spacer from "$lib/components/Spacer.svelte";
 
 	interface Link {
 		title: string;
@@ -76,7 +77,7 @@
 	let projectFilter: String[] = [];
 </script>
 
-<spacer class="flex flex-grow pt-16 sm:pt-20"></spacer>
+<Spacer />
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
 >
