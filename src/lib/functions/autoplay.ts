@@ -1,4 +1,3 @@
-import { charSwap } from "$lib/functions/charSwap";
 import { textArray } from "$lib/functions/store";
 import { shuffle } from "$lib/functions/shuffle";
 import { bubbleSort } from "$lib/functions/bubbleSort";
@@ -9,18 +8,18 @@ function delay(ms: number) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// List of sorting functions
+const sortingFunctions = [bubbleSort, insertionSort, bogoSort];
+let iterator = Math.round(Math.random() * 1000);
+
 export async function autoplay() {
 	await delay(1500);
 	while (true) {
 		shuffle(textArray);
 		await delay(500);
-		await insertionSort(textArray);
+		await sortingFunctions[iterator % sortingFunctions.length](textArray);
 
-		await delay(3000); // Wait for a bit before sorting again
-
-		shuffle(textArray);
-		await delay(500);
-		await bubbleSort(textArray);
+		iterator++;
 		await delay(3000); // Wait for a bit before sorting again
 	}
 }

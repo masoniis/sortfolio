@@ -1,13 +1,13 @@
 import { get } from "svelte/store";
 import { wait } from "./extras";
 import { shuffle } from "./shuffle";
+import { unshuffle } from "./unshuffle";
 import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "./store";
 
 export async function bogoSort(store: Writable<CharObj[]>) {
 	if (get(currentAlgorithm)?.name
 		== 'Bogosort') {
-		// If already doing bogo, return
 		return;
 	}
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; return alg; });
@@ -19,7 +19,12 @@ export async function bogoSort(store: Writable<CharObj[]>) {
 			return;
 		}
 
-		shuffle(store);
+		if (Math.random() < 0.09) {
+			unshuffle(store);
+		} else {
+			shuffle(store);
+		}
+
 		await wait(200);
 	}
 
