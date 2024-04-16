@@ -22,6 +22,7 @@
 			<span
 				class:scan={charObj.scan}
 				class:final={charObj.final}
+				class="transition-colors duration-1000"
 				animate:charSwap={i}
 			>
 				{@html charObj.value}
@@ -55,7 +56,7 @@
 	}
 
 	span.scan {
-		@apply bg-primaryaccentbg/20 rounded-lg;
+		@apply bg-primaryaccentbg/20;
 	}
 
 	span.final {
