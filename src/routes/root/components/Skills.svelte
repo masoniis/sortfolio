@@ -52,6 +52,6 @@
 
 	grid {
 		@apply grid justify-start w-full gap-4;
-		grid-template-columns: repeat(auto-fit, minmax(68px, 3rem));
+		grid-template-columns: repeat(auto-fit, minmax(68px, 68px));
 	}
 </style>
