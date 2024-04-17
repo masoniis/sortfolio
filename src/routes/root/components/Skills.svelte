@@ -1,5 +1,13 @@
 <script>
-	import { HTML5Icon, RustIcon } from "$lib/components/icons";
+	import {
+		HTML5Icon,
+		RustIcon,
+		CPPIcon,
+		TSIcon,
+		CSSIcon,
+		JSIcon,
+		SvelteIcon,
+	} from "$lib/components/icons";
 </script>
 
 <div class="flex flex-col">
@@ -9,10 +17,15 @@
 		Skills
 	</h3>
 	<spacer class="h-4"></spacer>
-	<div class="grid cols-4 grid-flow-col-dense gap-4 justify-start">
+	<grid>
 		<HTML5Icon />
 		<RustIcon />
-	</div>
+		<CPPIcon />
+		<TSIcon />
+		<CSSIcon />
+		<JSIcon />
+		<SvelteIcon />
+	</grid>
 </div>
 
 <style lang="postcss">
@@ -28,8 +41,13 @@
 	}
 
 	:global(.skill:hover::before) {
-		@apply bg-primaryaccentbg/70 text-primaryaccentfg font-semibold;
+		@apply bg-primaryaccentbg/70 text-primaryaccentfg font-extrabold;
 		@apply absolute rounded-lg top-0 left-0 w-full h-full flex flex-col items-center justify-center overflow-auto;
 		content: attr(data-hover-text);
+	}
+
+	grid {
+		@apply grid justify-start w-full gap-4;
+		grid-template-columns: repeat(auto-fit, minmax(68px, 3rem));
 	}
 </style>
