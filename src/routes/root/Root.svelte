@@ -7,7 +7,7 @@
 </script>
 
 <container
-	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-16 lg:space-y-0"
+	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row w-auto max-w-7xl mx-auto lg:space-x-16 lg:space-y-0"
 >
 	<span class="min-h-full lg:flex-1">
 		<span class="sticky top-0">

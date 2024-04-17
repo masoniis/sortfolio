@@ -20,7 +20,7 @@ export function charSwap(
 			const x = u * dx;
 			var y = -2 * Math.sin(t * Math.PI);
 			if (flipper == true) {
-				y = -y // move up and down by 50 pixels
+				y = -y
 			}
 
 			const sx = t + (u * from.width) / to.width;
@@ -28,5 +28,5 @@ export function charSwap(
 
 			return `transform: ${transform} translate(${x}px, ${y}vw) scale(${sx}, ${sy});`;
 		},
-	};
+	} as AnimationConfig;
 }
