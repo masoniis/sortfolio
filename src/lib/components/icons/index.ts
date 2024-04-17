@@ -11,3 +11,5 @@ export { default as JSIcon } from './JS.svelte';
 export { default as CSSIcon } from './CSS.svelte';
 export { default as CPPIcon } from './CPP.svelte';
 export { default as SvelteIcon } from './Svelte.svelte';
+export { default as NeovimIcon } from './Neovim.svelte';
+export { default as GitIcon } from './Git.svelte';

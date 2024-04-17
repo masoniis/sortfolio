@@ -7,6 +7,8 @@
 		CSSIcon,
 		JSIcon,
 		SvelteIcon,
+		NeovimIcon,
+		GitIcon,
 	} from "$lib/components/icons";
 </script>
 
@@ -25,6 +27,8 @@
 		<CSSIcon />
 		<JSIcon />
 		<SvelteIcon />
+		<NeovimIcon />
+		<GitIcon />
 	</grid>
 </div>
 
