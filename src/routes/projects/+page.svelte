@@ -117,7 +117,7 @@
 	<h1 class="text-5xl">All my projects</h1>
 	<div class="-mx-4 mt-8 sm:-mx-0">
 		<table class="min-w-full divide-y divide-gray-300">
-			<thead>
+			<thead class="backdrop-blur bg-primarybg/80 sticky top-0">
 				<tr>
 					<th
 						scope="col"
@@ -141,7 +141,7 @@
 					</th>
 					<th
 						scope="col"
-						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg flex items-start"
+						class="sticky top-0 z-10 px-3 py-3.5 text-left text-sm font-semibold text-primaryfg flex items-start sm:table-cell"
 					>
 						Technologies
 						<button
