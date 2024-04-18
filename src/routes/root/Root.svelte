@@ -3,7 +3,6 @@
 	import Skills from "./components/Skills.svelte";
 	import Header from "./components/Header.svelte";
 	import About from "./components/About.svelte";
-	import Spacer from "$lib/components/Spacer.svelte";
 </script>
 
 <container

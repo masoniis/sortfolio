@@ -20,6 +20,32 @@
 
 	let projects: Project[] = [
 		{
+			title: "Sonders",
+			year: 2024,
+			technologies: ["GLSL"],
+			links: [
+				{
+					title: "Github repo",
+					url: "https://github.com/masoniis/sonders",
+				},
+			],
+		},
+		{
+			title: "Portfolio V1",
+			year: 2024,
+			technologies: ["HTML", "CSS", "TS", "Tailwind", "SvelteKit"],
+			links: [
+				{
+					title: "Live site",
+					url: "https://masonbott.com/",
+				},
+				{
+					title: "Github repo",
+					url: "https://github.com/masoniis/portfolio",
+				},
+			],
+		},
+		{
 			title: "Sedmos",
 			year: 2024,
 			technologies: ["HTML", "CSS", "TS", "Tailwind"],
@@ -44,13 +70,13 @@
 		},
 		{
 			title: "QuantumChart",
-			year: 2021,
-			technologies: ["HTML", "CSS", "TS", "Tailwind"],
+			year: 2019,
+			technologies: ["HTML", "CSS", "JS"],
 			links: [
 				{ title: "Live site", url: "https://quantumchart.vercel.app/" },
 				{
 					title: "Github repo",
-					url: "https://github.com/masoniis/quantumchart",
+					url: "https://github.com/masoniis/quantum-chart",
 				},
 			],
 		},
