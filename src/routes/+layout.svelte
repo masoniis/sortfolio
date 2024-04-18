@@ -64,7 +64,7 @@
 		top: var(--top);
 		left: var(--left);
 		background: radial-gradient(
-			circle at center in hsl shorter hue,
+			circle,
 			theme(colors.primaryfg/.05) 0%,
 			transparent 50%
 		);

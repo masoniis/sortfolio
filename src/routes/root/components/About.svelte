@@ -12,7 +12,10 @@
 	<p>
 		I'm a 2nd year in Computer Science at the University of Colorado Boulder. I
 		love to learn, discover, and create.
-		<a href="about" class="hover:text-primaryaccentbg group/link">
+		<a
+			href="about"
+			class="hover:text-primaryaccentbg text-primaryfg group/link"
+		>
 			More about me
 			<ArrowIcon />
 		</a>
