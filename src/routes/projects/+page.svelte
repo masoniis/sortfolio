@@ -100,7 +100,7 @@
 
 	$: projects = projects;
 
-	let projectFilter: String[] = [];
+	let projectFilter: string[] = [];
 </script>
 
 <Spacer />
@@ -159,7 +159,7 @@
 			<tbody class="divide-y divide-gray-200 bg-primarybg">
 				{#each projects.filter((project) => {
 					if (projectFilter.length === 0) return true;
-					return project.technologies.some( (tech) => projectFilter.includes(tech), );
+					return projectFilter.every( (tech) => project.technologies.includes(tech), );
 				}) as project}
 					<tr>
 						<td
