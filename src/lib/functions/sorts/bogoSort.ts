@@ -11,15 +11,32 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 
 	// keep shuffling the array until it is sorted but actually "get lucky" after 9+= iterations
 	while (!isSorted(store)) {
+		for (let i = 0; i < get(store).length; i++) {
+			get(store)[i].scan = true;
+			await wait(ms.interval / 10);
+			store.update((arr) => { return arr });
+		}
+
+		await wait(ms.interval);
+
+		for (let i = 0; i < get(store).length; i++)
+			get(store)[i].scan = false;
+
 		if (Math.random() < 0.25 && counter > 9) {
 			unshuffle(store);
 		} else {
 			shuffle(store);
 		}
 
+		store.update((arr) => { return arr });
+
 		counter++;
 		await wait(ms.interval);
 	}
+
+	for (let i = 0; i < get(store).length; i++)
+		get(store)[i].final = true;
+	store.update((arr) => { return arr });
 
 	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
 }
