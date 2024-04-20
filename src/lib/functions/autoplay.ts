@@ -17,7 +17,7 @@ const length = sortingFunctions.length;
 let iterator = Math.round(Math.random() * length);
 
 
-export const msInterval = writable<number>(200);
+export const msInterval = writable<number>(150);
 
 let intervalConfig = { interval: 200 };
 msInterval.subscribe((value) => {
@@ -34,8 +34,7 @@ export async function autoplay() {
 		shuffle(textArray);
 		await delay(500);
 		await sortingFunctions[iterator++ % length](textArray, intervalConfig);
-		await delay(3000); // Wait for a bit before sorting again
-
+		await delay(3000);
 		reset(textArray);
 	}
 }
