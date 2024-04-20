@@ -10,9 +10,9 @@ const sortingFunctions: Function[] = [quickSort];
 const length: number = sortingFunctions.length;
 let iterator: number = Math.round(Math.random() * length);
 
-export const msInterval: Writable<number> = writable<number>(700);
+export const msInterval: Writable<number> = writable<number>(200);
 
-let intervalConfig = { interval: 700 }; //INFO: This is an object because I want to pass it in as reference (kinda scuffed)
+let intervalConfig = { interval: 200 }; //INFO: This is an object because I want to pass it in as reference (kinda scuffed)
 msInterval.subscribe((value) => {
 	intervalConfig.interval = value;
 	if (intervalConfig.interval < 100) {
