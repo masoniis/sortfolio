@@ -1,28 +1,35 @@
 import { get } from "svelte/store";
-import { wait } from "./extras";
+import { wait } from "$lib/functions/extras";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "./store";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 
 export async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; alg.complexity = 'O(n^2)'; return alg; });
 
 	let n = get(store).length; // length of array
+	get(store)[0].final = true;
 	for (let i = 1; i < n; i++) {
 		let current = get(store)[i];
 		current.scan = true;
-		// initialize a variable j with the previous index
-		let j = i - 1;
-		// loop over the sorted subarray from right to left
-		while (j >= 0 && get(store)[j].index > current.index) {
+		store.update((arr) => { return arr });
+		await wait(ms.interval);
+
+		for (let j = i; j > 0; j--) {
+			if (get(store)[j].index > get(store)[j - 1].index)
+				break;
+
 			store.update((arr) => {
-				let temp = arr[j + 1];
-				arr[j + 1] = arr[j];
+				const temp = arr[j - 1];
+				arr[j - 1] = arr[j];
 				arr[j] = temp;
 				return arr;
 			});
+
 			await wait(ms.interval);
-			j--;
 		}
+
+		await wait(ms.interval);
+		current.final = true;
 		current.scan = false;
 	}
 

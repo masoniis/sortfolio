@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
-import { wait } from "./extras";
+import { wait } from "$lib/functions/extras";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "./store";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 
 export async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bubble sort'; alg.complexity = 'O(n^2)'; return alg; });
@@ -11,6 +11,7 @@ export async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: num
 		for (let j = 0; j < n - i - 1; j++) { // N comparisons between adjacent elements
 			get(store)[j].scan = true;
 			get(store)[j + 1].scan = true;
+			store.update((arr) => { return arr });
 			if (get(store)[j].index > get(store)[j + 1].index) {
 				let temp = get(store)[j];
 				store.update((arr) => {
@@ -18,8 +19,8 @@ export async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: num
 					arr[j + 1] = temp;
 					return arr;
 				});
-				await wait(ms.interval);
 			}
+			await wait(ms.interval);
 			get(store)[j].scan = false;
 			get(store)[j + 1].scan = false;
 		}

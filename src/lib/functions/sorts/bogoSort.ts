@@ -1,10 +1,9 @@
 import { get } from "svelte/store";
-import { wait } from "./extras";
-import { shuffle } from "./shuffle";
-import { unshuffle } from "./unshuffle";
+import { wait } from "$lib/functions/extras";
+import { shuffle } from "$lib/functions/shuffle";
+import { unshuffle } from "$lib/functions/unshuffle";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "./store";
-import { msInterval } from "./autoplay";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 
 export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });

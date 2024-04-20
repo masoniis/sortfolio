@@ -22,7 +22,7 @@
 			<span
 				class:scan={charObj.scan}
 				class:final={charObj.final}
-				class="transition-colors duration-500"
+				class="transition-colors duration-500 {charObj.style}"
 				animate:charSwap={i}
 			>
 				{@html charObj.value}

@@ -8,6 +8,7 @@ export function reset(store: Writable<CharObj[]>) {
 		for (let i = 0; i < arr.length; i++) {
 			arr[i].scan = false;
 			arr[i].final = false;
+			arr[i].style = "";
 		}
 		return arr;
 	});

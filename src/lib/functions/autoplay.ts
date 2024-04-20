@@ -1,7 +1,7 @@
 import { shuffle } from "$lib/functions/shuffle";
-import { bubbleSort } from "$lib/functions/bubbleSort";
-import { insertionSort } from "$lib/functions/insertionSort";
-import { bogoSort } from "$lib/functions/bogoSort";
+import { bubbleSort } from "$lib/functions/sorts/bubbleSort";
+import { insertionSort } from "$lib/functions/sorts/insertionSort";
+import { bogoSort } from "$lib/functions/sorts/bogoSort";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
 import { writable } from "svelte/store";
@@ -11,7 +11,7 @@ function delay(ms: number) {
 }
 
 // List of sorting functions
-const sortingFunctions = [bogoSort, insertionSort, bubbleSort];
+const sortingFunctions = [insertionSort, bubbleSort, bogoSort];
 const length = sortingFunctions.length;
 let iterator = Math.round(Math.random() * length);
 

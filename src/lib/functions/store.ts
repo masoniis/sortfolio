@@ -5,6 +5,7 @@ export interface CharObj {
 	index: number;
 	scan?: boolean;
 	final?: boolean;
+	style?: string;
 }
 
 interface AlgorithmObj {
