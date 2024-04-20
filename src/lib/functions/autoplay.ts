@@ -1,14 +1,8 @@
-import { shuffle } from "$lib/functions/shuffle";
-import { bubbleSort } from "$lib/functions/sorts/bubbleSort";
-import { insertionSort } from "$lib/functions/sorts/insertionSort";
-import { bogoSort } from "$lib/functions/sorts/bogoSort";
+import { shuffle, wait } from "$lib/functions/sorthelpers";
+import { bubbleSort, insertionSort, bogoSort } from "$lib/functions/sorts";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
 import { writable } from "svelte/store";
-
-function delay(ms: number) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 // List of sorting functions
 const sortingFunctions = [insertionSort, bubbleSort, bogoSort];
@@ -27,12 +21,12 @@ msInterval.subscribe((value) => {
 });
 
 export async function autoplay() {
-	await delay(1500);
+	await wait(1500);
 	while (true) {
 		shuffle(textArray);
-		await delay(500);
+		await wait(500);
 		await sortingFunctions[iterator++ % length](textArray, intervalConfig);
-		await delay(3000);
+		await wait(3000);
 		reset(textArray);
 	}
 }

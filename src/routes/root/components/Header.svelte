@@ -18,12 +18,12 @@
 
 <div class="flex flex-col">
 	<h1 class="flex overflow-clip text-dynamich3 text-primaryfg pt-16 sm:pt-24">
-		{#each $textArray as charObj, i (charObj)}
+		{#each $textArray as charObj (charObj)}
 			<span
 				class:scan={charObj.scan}
 				class:final={charObj.final}
 				class="transition-colors duration-500 {charObj.style}"
-				animate:charSwap={i}
+				animate:charSwap
 			>
 				{@html charObj.value}
 			</span>
@@ -61,5 +61,9 @@
 
 	span.final {
 		@apply underline decoration-primaryaccentbg/80 underline-offset-1;
+	}
+
+	span.bogo {
+		@apply transition duration-100;
 	}
 </style>

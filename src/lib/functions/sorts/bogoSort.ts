@@ -1,12 +1,16 @@
 import { get } from "svelte/store";
-import { wait } from "$lib/functions/extras";
-import { shuffle } from "$lib/functions/shuffle";
-import { unshuffle } from "$lib/functions/unshuffle";
+import { wait, shuffle, unshuffle, prestyle, isSorted } from "$lib/functions/sorthelpers";
 import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 
-export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
+async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });
+	prestyle(store, "bogo");
+
+	get(store).forEach((char: CharObj) => {
+		console.log(char);
+	});
+
 	let counter = 0;
 
 	while (!isSorted(store)) {
@@ -26,7 +30,6 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 
 		for (let i = 0; i < get(store).length; i++) {
 			get(store)[i].scan = true;
-			get(store)[i].style = "transition duration-100 ease-in-out";
 			await wait(ms.interval / 10);
 			store.update((arr) => { return arr });
 		}
@@ -42,12 +45,4 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 	store.update((arr) => { return arr });
 }
 
-function isSorted(store: Writable<CharObj[]>): boolean {
-	const arr = get(store);
-	for (let i = 0; i < arr.length - 1; i++) {
-		if (arr[i].index > arr[i + 1].index) {
-			return false;
-		}
-	}
-	return true;
-}
+export default bogoSort;
