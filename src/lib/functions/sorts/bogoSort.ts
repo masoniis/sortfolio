@@ -9,16 +9,7 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });
 	let counter = 0;
 
-	// keep shuffling the array until it is sorted but actually "get lucky" after 9+= iterations
 	while (!isSorted(store)) {
-		for (let i = 0; i < get(store).length; i++) {
-			get(store)[i].scan = true;
-			await wait(ms.interval / 10);
-			store.update((arr) => { return arr });
-		}
-
-		await wait(ms.interval);
-
 		for (let i = 0; i < get(store).length; i++)
 			get(store)[i].scan = false;
 
@@ -32,10 +23,21 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 
 		counter++;
 		await wait(ms.interval);
+
+		for (let i = 0; i < get(store).length; i++) {
+			get(store)[i].scan = true;
+			get(store)[i].style = "transition duration-100 ease-in-out";
+			await wait(ms.interval / 10);
+			store.update((arr) => { return arr });
+		}
+
+		await wait(ms.interval);
 	}
 
-	for (let i = 0; i < get(store).length; i++)
+	for (let i = 0; i < get(store).length; i++) {
 		get(store)[i].final = true;
+		get(store)[i].scan = false;
+	}
 
 	store.update((arr) => { return arr });
 }
