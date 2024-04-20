@@ -24,22 +24,19 @@ async function partition(store: Writable<CharObj[]>, ms: { interval: number }, l
 
 	for (let j = low; j < high; j++) {
 		arr[j].style = "rbound";
-		arr[j].scan = true;
+		arr[i >= 0 ? i : 0].style = "lbound";
 		store.update(_ => { return arr; });
 		await wait(ms.interval);
 		if (arr[j].index < pivot) {
+			arr[i >= 0 ? i : 0].style = "";
 			i++;
+			[arr[i], arr[j]] = [arr[j], arr[i]];
 			arr[i].style = "lbound";
 			store.update(_ => { return arr; });
-			await wait(ms.interval);
-			[arr[i], arr[j]] = [arr[j], arr[i]];
-			arr[i].style = "";
-			arr[i].scan = false;
-			store.update(_ => { return arr; });
 		}
-		arr[j].scan = false;
 		arr[j].style = "";
 	}
+	arr[i >= 0 ? i : 0].style = "lbound";
 
 	[arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
 
