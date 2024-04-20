@@ -36,9 +36,8 @@ export async function bogoSort(store: Writable<CharObj[]>, ms: { interval: numbe
 
 	for (let i = 0; i < get(store).length; i++)
 		get(store)[i].final = true;
-	store.update((arr) => { return arr });
 
-	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
+	store.update((arr) => { return arr });
 }
 
 function isSorted(store: Writable<CharObj[]>): boolean {

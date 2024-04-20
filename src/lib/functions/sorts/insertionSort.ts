@@ -6,10 +6,10 @@ import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 export async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; alg.complexity = 'O(n^2)'; return alg; });
 
-	let n = get(store).length; // length of array
-	get(store)[0].final = true;
+	let n = get(store).length;
+	get(store)[0].final = true; // First character is "in right place" by default
 	for (let i = 1; i < n; i++) {
-		let current = get(store)[i];
+		const current = get(store)[i];
 		current.scan = true;
 		store.update((arr) => { return arr });
 		await wait(ms.interval);
@@ -33,7 +33,5 @@ export async function insertionSort(store: Writable<CharObj[]>, ms: { interval: 
 		current.scan = false;
 	}
 
-	store.update((arr) => { return arr }) // Update store with current state for UI
-
-	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
+	store.update((arr) => { return arr })
 }

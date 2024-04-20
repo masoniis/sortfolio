@@ -26,4 +26,5 @@ export async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: num
 		}
 		get(store)[n - i - 1].final = true;
 	}
+	store.update((arr) => { return arr });
 }

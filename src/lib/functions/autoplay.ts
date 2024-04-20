@@ -1,6 +1,7 @@
 import { shuffle } from "$lib/functions/shuffle";
 import { bubbleSort } from "$lib/functions/sorts/bubbleSort";
 import { insertionSort } from "$lib/functions/sorts/insertionSort";
+import { currentAlgorithm } from "$lib/functions/store";
 import { bogoSort } from "$lib/functions/sorts/bogoSort";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
@@ -32,10 +33,7 @@ export async function autoplay() {
 	while (true) {
 		shuffle(textArray);
 		await delay(500);
-		await sortingFunctions[iterator % length](textArray, intervalConfig);
-
-		iterator++;
-		textArray.update((arr) => { return arr; }); // Update store with current state for UI
+		await sortingFunctions[iterator++ % length](textArray, intervalConfig);
 		await delay(3000); // Wait for a bit before sorting again
 
 		reset(textArray);
