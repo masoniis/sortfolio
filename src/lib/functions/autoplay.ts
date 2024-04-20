@@ -1,18 +1,17 @@
 import { shuffle, wait } from "$lib/functions/sorthelpers";
-import { bubbleSort, insertionSort, bogoSort } from "$lib/functions/sorts";
+import { bubbleSort, insertionSort, bogoSort, quickSort } from "$lib/functions/sorts";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
-import { writable } from "svelte/store";
+import { writable, type Writable } from "svelte/store";
 
 // List of sorting functions
-const sortingFunctions = [insertionSort, bubbleSort, bogoSort];
-const length = sortingFunctions.length;
-let iterator = Math.round(Math.random() * length);
+const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort];
+const length: number = sortingFunctions.length;
+let iterator: number = Math.round(Math.random() * length);
 
+export const msInterval: Writable<number> = writable<number>(200);
 
-export const msInterval = writable<number>(150);
-
-let intervalConfig = { interval: 150 };
+let intervalConfig = { interval: 200 }; //INFO: This is an object because I want to pass it in as reference (kinda scuffed haha)
 msInterval.subscribe((value) => {
 	intervalConfig.interval = value;
 	if (intervalConfig.interval < 100) {

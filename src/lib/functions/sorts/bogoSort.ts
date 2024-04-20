@@ -7,10 +7,6 @@ async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });
 	prestyle(store, "bogo");
 
-	get(store).forEach((char: CharObj) => {
-		console.log(char);
-	});
-
 	let counter = 0;
 
 	while (!isSorted(store)) {

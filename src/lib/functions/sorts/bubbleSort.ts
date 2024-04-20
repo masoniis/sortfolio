@@ -3,7 +3,7 @@ import { wait, prestyle } from "$lib/functions/sorthelpers";
 import { type Writable } from "svelte/store";
 import { type CharObj, currentAlgorithm } from "$lib/functions/store";
 
-export async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: number }) {
+async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bubble sort'; alg.complexity = 'O(n^2)'; return alg; });
 
 	prestyle(store, "transition duration-100 ease-in-out");

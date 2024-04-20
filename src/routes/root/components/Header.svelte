@@ -66,4 +66,16 @@
 	span.bogo {
 		@apply transition duration-100;
 	}
+
+	span.pivot {
+		@apply underline decoration-yellow-500 underline-offset-1;
+	}
+
+	span.lbound {
+		@apply underline decoration-blue-500 underline-offset-1;
+	}
+
+	span.rbound {
+		@apply underline decoration-red-500 underline-offset-1;
+	}
 </style>
