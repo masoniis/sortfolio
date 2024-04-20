@@ -1,7 +1,6 @@
 import { shuffle } from "$lib/functions/shuffle";
 import { bubbleSort } from "$lib/functions/sorts/bubbleSort";
 import { insertionSort } from "$lib/functions/sorts/insertionSort";
-import { currentAlgorithm } from "$lib/functions/store";
 import { bogoSort } from "$lib/functions/sorts/bogoSort";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
@@ -19,13 +18,12 @@ let iterator = Math.round(Math.random() * length);
 
 export const msInterval = writable<number>(150);
 
-let intervalConfig = { interval: 200 };
+let intervalConfig = { interval: 150 };
 msInterval.subscribe((value) => {
 	intervalConfig.interval = value;
 	if (intervalConfig.interval < 100) {
 		intervalConfig.interval = 100;
 	}
-	console.log(intervalConfig.interval + "ms");
 });
 
 export async function autoplay() {

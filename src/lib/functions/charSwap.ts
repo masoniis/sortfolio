@@ -4,7 +4,6 @@ let flipper = true;
 export function charSwap(
 	node: Element,
 	{ from, to }: { from: DOMRect; to: DOMRect },
-	index: number
 ): AnimationConfig {
 	const style = getComputedStyle(node);
 	const transform = style.transform === "none" ? "" : style.transform;

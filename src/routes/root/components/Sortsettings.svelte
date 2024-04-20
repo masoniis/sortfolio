@@ -3,6 +3,11 @@
 	import { msInterval } from "$lib/functions/autoplay";
 
 	let sortSettings = false;
+	let interval = 0;
+
+	msInterval.subscribe((value) => {
+		interval = value;
+	});
 </script>
 
 <div class="mt-4">
@@ -12,20 +17,27 @@
 	>
 		Sort settings
 	</button>
-	<div class:hidden={!sortSettings} class="">
-		<button
-			class="mt-8 px-4 py-2 text-dynamich6 text-primaryfg bg-green-500 rounded-lg"
-			on:click={() => {
-				msInterval.set(get(msInterval) + 10);
-			}}
-			>UP
-		</button>
-		<button
-			class="mt-8 px-4 py-2 text-dynamich6 text-primaryfg bg-red-500 rounded-lg"
-			on:click={() => {
-				msInterval.set(get(msInterval) - 10);
-			}}
-			>DOWN
-		</button>
+	<div class:hidden={!sortSettings} class="flex flex-col gap-4">
+		<div>
+			<button
+				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-green-500 rounded-lg w-fit"
+				on:click={() => {
+					msInterval.set(get(msInterval) - 100);
+				}}
+			>
+				Speed up
+			</button>
+			<button
+				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-red-500 rounded-lg w-fit"
+				on:click={() => {
+					msInterval.set(get(msInterval) + 100);
+				}}
+			>
+				Speed down
+			</button>
+		</div>
+		<p>
+			Speed: {interval}ms
+		</p>
 	</div>
 </div>
