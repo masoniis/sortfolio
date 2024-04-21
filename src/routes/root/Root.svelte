@@ -5,6 +5,10 @@
 	import About from "./components/About.svelte";
 </script>
 
+<svelte:head>
+	<title>Mason Bott</title>
+</svelte:head>
+
 <container
 	class="text-primaryfg min-h-screen flex flex-col space-y-8 lg:flex-row max-w-7xl mx-auto lg:space-x-16 lg:space-y-0"
 >

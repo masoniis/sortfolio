@@ -4,6 +4,10 @@
 	import Grid from "./components/Grid.svelte";
 </script>
 
+<svelte:head>
+	<title>About | Mason Bott</title>
+</svelte:head>
+
 <Spacer />
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"

@@ -103,6 +103,10 @@
 	let projectFilter: string[] = [];
 </script>
 
+<svelte:head>
+	<title>Projects | Mason Bott</title>
+</svelte:head>
+
 <Spacer />
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
