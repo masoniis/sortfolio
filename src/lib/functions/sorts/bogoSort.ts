@@ -33,6 +33,8 @@ async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 		await wait(ms.interval);
 	}
 
+	prestyle(store, "bogo-end");
+
 	for (let i = 0; i < get(store).length; i++) {
 		get(store)[i].final = true;
 		get(store)[i].scan = false;

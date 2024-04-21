@@ -67,6 +67,10 @@
 		@apply transition duration-100;
 	}
 
+	span.bogo-end {
+		@apply transition duration-[2000ms];
+	}
+
 	span.pivot {
 		@apply underline decoration-yellow-500 underline-offset-1;
 	}
