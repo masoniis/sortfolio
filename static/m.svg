@@ -1,0 +1,25 @@
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	width="64px" height="64px" 
+	viewBox="197 14 100 120" 
+	style="background: rgb(24, 24, 27);" 
+	preserveAspectRatio="xMidYMid">
+	<defs>
+		<filter id="editing-hover" x="-100%" y="-100%" width="400%" height="400%">
+			<feFlood flood-color="#18181B" result="flood"/>
+			<feComposite operator="in" in2="SourceAlpha" in="flood" result="shadow"/>
+			<feOffset dx="-2" dy="-1.3" in="SourceGraphic" result="offset-1"/>
+			<feOffset dx="2" dy="1.3" in="shadow" result="offset-2"/>
+			<feMerge>
+				<feMergeNode in="offset-2"/>
+				<feMergeNode in="offset-1"/>
+			</feMerge>
+		</filter>
+	</defs>
+	<g filter="url(#editing-hover)">
+		<g transform="translate(215, 103) scale(1.35)">
+			<path d="M6.53 0L-0.83 0L10.75-42.24L24.13-42.24L27.07-18.11L38.98-42.24L50.18-42.24L51.33-10.62L51.33-10.62Q51.58-4.35 54.66-2.43L54.66-2.43L54.66-2.43Q53.95-1.15 51.90 0.06L51.90 0.06L51.90 0.06Q49.86 1.28 47.14 1.28L47.14 1.28L47.14 1.28Q44.42 1.28 42.82 0.51L42.82 0.51L42.82 0.51Q41.22-0.26 40.32-1.54L40.32-1.54L40.32-1.54Q38.72-3.84 38.72-8.26L38.72-8.26L38.72-28.03L26.11 0L18.18 0L13.70-28.74L6.53 0Z" 
+			fill="#22C55D"/>
+		</g>
+	</g>
+</svg>
