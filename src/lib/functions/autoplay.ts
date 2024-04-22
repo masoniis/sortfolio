@@ -1,8 +1,7 @@
-import { shuffle, wait } from "$lib/functions/sorthelpers";
+import { shuffle, wait, reset } from "$lib/functions/sorthelpers";
 import { bubbleSort, insertionSort, bogoSort, quickSort, selectionSort } from "$lib/functions/sorts";
-import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
-import { get, writable, type Writable } from "svelte/store";
+import { writable, type Writable } from "svelte/store";
 
 const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort, selectionSort];
 // const sortingFunctions: Function[] = [quickSort];

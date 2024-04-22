@@ -7,7 +7,7 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 	currentAlgorithm.update((alg) => { alg.name = 'Selection sort'; alg.complexity = 'O(n^2)'; return alg; });
 
 	let n = get(store).length;
-	console.log(get(store));
+
 	for (let i = 0; i < n; i++) {
 		let min: number = 1 / 0;
 		let mindex = 0;

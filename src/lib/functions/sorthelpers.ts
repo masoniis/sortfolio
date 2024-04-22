@@ -1,6 +1,6 @@
 import { type Writable } from "svelte/store";
 import { get } from "svelte/store";
-import { type CharObj } from "./store";
+import { type CharObj, currentAlgorithm } from "./store";
 
 export function wait(delay: number) {
 	return new Promise((resolve) => {
@@ -45,4 +45,16 @@ export function isSorted(store: Writable<CharObj[]>): boolean {
 		}
 	}
 	return true;
+}
+
+export function reset(store: Writable<CharObj[]>) {
+	store.update((arr) => {
+		for (let i = 0; i < arr.length; i++) {
+			arr[i].style = "";
+		}
+		return arr;
+	});
+
+	currentAlgorithm.update((alg) => { alg.name = undefined; return alg; });
+	store.update((arr) => { return arr; }); // Update store with current state for UI
 }
