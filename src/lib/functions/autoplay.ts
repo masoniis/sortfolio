@@ -1,12 +1,12 @@
 import { shuffle, wait } from "$lib/functions/sorthelpers";
-import { bubbleSort, insertionSort, bogoSort, quickSort } from "$lib/functions/sorts";
+import { bubbleSort, insertionSort, bogoSort, quickSort, selectionSort } from "$lib/functions/sorts";
 import { reset } from "$lib/functions/reset";
 import { textArray } from "$lib/functions/store";
 import { writable, type Writable } from "svelte/store";
 
 // List of sorting functions
-const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort];
-// const sortingFunctions: Function[] = [quickSort];
+// const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort];
+const sortingFunctions: Function[] = [selectionSort];
 const length: number = sortingFunctions.length;
 let iterator: number = Math.round(Math.random() * length);
 
