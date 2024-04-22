@@ -21,18 +21,18 @@ async function bubbleSort(store: Writable<CharObj[]>, ms: { interval: number }) 
 				});
 			}
 			await wait(ms.interval);
-			get(store)[j].scan = false;
-			get(store)[j + 1].scan = false;
+			get(store)[j].removeStyle("scan");
+			get(store)[j + 1].removeStyle("scan");
 		}
-		get(store)[n - i - 1].final = true;
+		get(store)[n - i - 1].addStyle("final");;
 	}
 	store.update((arr) => { return arr });
 }
 
 // Scan helper
 function scan(store: Writable<CharObj[]>, i: number, j: number) {
-	get(store)[i].scan = true;
-	get(store)[j].scan = true;
+	get(store)[i].addStyle("scan");
+	get(store)[j].addStyle("scan");
 	store.update((arr) => { return arr });
 }
 

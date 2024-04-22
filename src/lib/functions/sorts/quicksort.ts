@@ -8,7 +8,7 @@ async function quickSort(store: Writable<CharObj[]>, ms: { interval: number }, l
 		await quickSort(store, ms, low, pi - 1);
 		await quickSort(store, ms, pi + 1, high);
 	} else if (low == high) {
-		get(store)[low].final = true;
+		get(store)[low].addStyle("final");
 		store.update(_ => { return get(store); });
 		await wait(ms.interval);
 	}
@@ -21,7 +21,7 @@ async function partition(store: Writable<CharObj[]>, ms: { interval: number }, l
 	let arr = get(store);
 	let i = low - 1;
 
-	get(store)[pivotIndex].style = "pivot";
+	get(store)[pivotIndex].addStyle("pivot");
 	store.update(_ => { return arr; });
 
 	await wait(ms.interval);
@@ -30,15 +30,12 @@ async function partition(store: Writable<CharObj[]>, ms: { interval: number }, l
 
 	for (let j = low; j < high; j++) {
 		arr[j].style = "rbound";
-		console.log("Set rbound " + j);
 		store.update(_ => { return arr; });
 		await wait(ms.interval);
 		if (arr[j].index < pivot) {
-			arr[i >= 0 ? i : 0].style = "";
 			i++;
 			[arr[i], arr[j]] = [arr[j], arr[i]];
 			arr[i].style = "lbound";
-			console.log("Set lbound " + i);
 			store.update(_ => { return arr; });
 		}
 		arr[j].style = "";
@@ -49,8 +46,8 @@ async function partition(store: Writable<CharObj[]>, ms: { interval: number }, l
 
 	pivotIndex = i + 1;
 
-	arr[pivotIndex].style = "";
-	arr[pivotIndex].final = true;
+	arr[pivotIndex].removeStyle("pivot");
+	arr[pivotIndex].addStyle("final");
 	store.update(_ => { return arr; });
 	await wait(ms.interval);
 

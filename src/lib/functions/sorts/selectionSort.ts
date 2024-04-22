@@ -11,32 +11,41 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 	for (let i = 0; i < n; i++) {
 		let min: number = 1 / 0;
 		let mindex = 0;
-		console.log(min);
 
 		for (let j = i; j < n; j++) {
+			await wait(ms.interval);
+
 			const char = get(store)[j];
-			char.scan = true;
+			char.style = "scan";
+			store.update((arr) => { return arr; });
 
 			if (char.index < min) {
+				if (min != 1 / 0) {
+					get(store)[mindex].removeStyle("min");
+				}
 				min = char.index;
 				mindex = j;
+				store.update((arr) => {
+					arr[j].addStyle("min");
+					return arr;
+				});
 			}
-
-			store.update((arr) => { return arr; });
-			await wait(ms.interval);
 		}
+
 		await wait(ms.interval);
-
-		for (let i = 0; i < get(store).length; i++) {
-			get(store)[i].scan = false;
-		}
 
 		store.update((arr) => {
 			[arr[i], arr[mindex]] = [arr[mindex], arr[i]];
-			arr[i].final = true;
+			arr[i].style = "final";
 			return arr;
 		});
 
+		store.update((arr) => {
+			for (let k = 0; k < arr.length; k++) {
+				arr[k].removeStyle("scan");
+			}
+			return arr
+		});
 
 		await wait(ms.interval);
 	}

@@ -7,10 +7,10 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; alg.complexity = 'O(n^2)'; return alg; });
 
 	let n = get(store).length;
-	get(store)[0].final = true; // First character is "in right place" by default
+	get(store)[0].addStyle("final"); // First character is "in right place" by default
 	for (let i = 1; i < n; i++) {
 		const current = get(store)[i];
-		current.scan = true;
+		current.addStyle("scan");
 		store.update((arr) => { return arr });
 		await wait(ms.interval);
 
@@ -29,8 +29,8 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 		}
 
 		await wait(ms.interval);
-		current.final = true;
-		current.scan = false;
+		current.addStyle("final");
+		current.removeStyle("scan");
 	}
 
 	store.update((arr) => { return arr })

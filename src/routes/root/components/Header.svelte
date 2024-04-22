@@ -20,8 +20,6 @@
 	<h1 class="flex overflow-clip text-dynamich3 text-primaryfg pt-16 sm:pt-24">
 		{#each $textArray as charObj (charObj)}
 			<span
-				class:scan={charObj.scan}
-				class:final={charObj.final}
 				class="transition-colors duration-500 {charObj.style}"
 				animate:charSwap
 			>
@@ -81,5 +79,9 @@
 
 	span.rbound {
 		@apply underline decoration-red-500 underline-offset-1;
+	}
+
+	span.min {
+		@apply underline decoration-blue-500 underline-offset-1;
 	}
 </style>

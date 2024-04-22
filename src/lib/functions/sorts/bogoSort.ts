@@ -11,7 +11,7 @@ async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 
 	while (!isSorted(store)) {
 		for (let i = 0; i < get(store).length; i++)
-			get(store)[i].scan = false;
+			get(store)[i].removeStyle("scan");
 
 		if (Math.random() < 0.25 && counter > 9) {
 			unshuffle(store);
@@ -25,7 +25,7 @@ async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 		await wait(ms.interval);
 
 		for (let i = 0; i < get(store).length; i++) {
-			get(store)[i].scan = true;
+			get(store)[i].addStyle("scan");
 			await wait(ms.interval / 10);
 			store.update((arr) => { return arr });
 		}
@@ -36,8 +36,8 @@ async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	prestyle(store, "bogo-end");
 
 	for (let i = 0; i < get(store).length; i++) {
-		get(store)[i].final = true;
-		get(store)[i].scan = false;
+		get(store)[i].addStyle("final");
+		get(store)[i].removeStyle("scan");;
 	}
 
 	store.update((arr) => { return arr });
