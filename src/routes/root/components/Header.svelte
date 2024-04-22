@@ -82,6 +82,6 @@
 	}
 
 	span.min {
-		@apply underline decoration-blue-500 underline-offset-1;
+		@apply underline decoration-primaryfg/80 underline-offset-1;
 	}
 </style>
