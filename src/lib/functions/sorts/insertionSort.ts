@@ -7,6 +7,7 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; alg.complexity = 'O(n^2)'; return alg; });
 
 	let n = get(store).length;
+
 	get(store)[0].addStyle("final"); // First character is "in right place" by default
 	for (let i = 1; i < n; i++) {
 		const current = get(store)[i];

@@ -38,17 +38,18 @@ interface AlgorithmObj {
 const algorithm: AlgorithmObj = { name: "start" };
 
 export const currentAlgorithm = writable<AlgorithmObj>(algorithm);
-export const textArray = writable<CharObj[]>([]);
 
-textArray.set([
-	new CharObjImpl('M', 0),
-	new CharObjImpl('a', 1),
-	new CharObjImpl('s', 2),
-	new CharObjImpl('o', 3),
-	new CharObjImpl('n', 4),
-	new CharObjImpl('&ensp;', 5),
-	new CharObjImpl('B', 6,),
-	new CharObjImpl('o', 7),
-	new CharObjImpl('t', 8),
-	new CharObjImpl('t', 9),
-]);
+export const textArray = writable(
+	[
+		new CharObjImpl('M', 0),
+		new CharObjImpl('a', 1),
+		new CharObjImpl('s', 2),
+		new CharObjImpl('o', 3),
+		new CharObjImpl('n', 4),
+		new CharObjImpl('&ensp;', 5),
+		new CharObjImpl('B', 6),
+		new CharObjImpl('o', 7),
+		new CharObjImpl('t', 8),
+		new CharObjImpl('t', 9),
+	]
+);

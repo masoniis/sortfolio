@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
 	import { textArray, currentAlgorithm } from "$lib/functions/store";
