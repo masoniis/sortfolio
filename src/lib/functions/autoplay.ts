@@ -3,8 +3,7 @@ import { bubbleSort, insertionSort, bogoSort, quickSort, selectionSort } from "$
 import { textArray } from "$lib/functions/store";
 import { writable, type Writable } from "svelte/store";
 
-// const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort, selectionSort];
-const sortingFunctions: Function[] = [selectionSort];
+const sortingFunctions: Function[] = [bubbleSort, insertionSort, bogoSort, quickSort, selectionSort];
 const length: number = sortingFunctions.length;
 let iterator: number = Math.round(Math.random() * length);
 

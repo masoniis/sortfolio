@@ -13,14 +13,14 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 		let mindex = 0;
 
 		for (let j = i; j < n; j++) {
-			await wait(ms.interval);
+			await wait(ms.interval / 2);
 
 			const char = get(store)[j];
 			char.style = "scan";
 			store.update((arr) => { return arr; });
 
 			if (char.index < min) {
-				await wait(ms.interval);
+				await wait(ms.interval / 2);
 				if (min != 1 / 0) {
 					get(store)[mindex].removeStyle("min");
 				}
