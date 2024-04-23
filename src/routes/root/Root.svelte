@@ -34,7 +34,6 @@
 			</h3>
 			<spacer class="h-4"></spacer>
 			<p>masonmbott@gmail.com</p>
-			<p>+1 (970) 443-3833</p>
 		</div>
 	</div>
 </container>
