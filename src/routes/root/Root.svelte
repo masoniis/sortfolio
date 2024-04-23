@@ -28,7 +28,7 @@
 
 		<div class="flex flex-col">
 			<h3
-				class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2"
+				class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2 text-primaryfg"
 			>
 				Get in touch
 			</h3>

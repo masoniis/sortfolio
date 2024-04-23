@@ -13,7 +13,7 @@
 				<div
 					class="group-hover/link:text-primaryaccentbg flex sm:flex-row justify-between items-center"
 				>
-					<div>
+					<div class="text-primaryfg group-hover/link:text-primaryaccentbg">
 						<slot name="title">Default Title</slot>
 						<ArrowIcon />
 					</div>
