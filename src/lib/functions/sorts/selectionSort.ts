@@ -20,7 +20,6 @@ async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number 
 			store.update((arr) => { return arr; });
 
 			if (char.index < min) {
-				await wait(ms.interval / 2);
 				if (min != 1 / 0) {
 					get(store)[mindex].removeStyle("min");
 				}

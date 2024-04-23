@@ -22,7 +22,7 @@
 			<button
 				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-green-500 rounded-lg w-fit"
 				on:click={() => {
-					msInterval.set(get(msInterval) - 100);
+					msInterval.set(get(msInterval) - 25 >= 0 ? get(msInterval) - 25 : 0);
 				}}
 			>
 				Speed up
@@ -30,7 +30,7 @@
 			<button
 				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-red-500 rounded-lg w-fit"
 				on:click={() => {
-					msInterval.set(get(msInterval) + 100);
+					msInterval.set(get(msInterval) + 25);
 				}}
 			>
 				Speed down

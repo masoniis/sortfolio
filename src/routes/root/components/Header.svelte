@@ -2,6 +2,7 @@
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
 	import { textArray, currentAlgorithm } from "$lib/functions/store";
+	import { msInterval } from "$lib/functions/autoplay";
 	import { fade } from "svelte/transition";
 	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
@@ -14,6 +15,12 @@
 			autoplay();
 		}
 	});
+
+	let charSwapDuration = 100;
+
+	msInterval.subscribe((value) => {
+		charSwapDuration = value - 10 > 0 ? value - 10 : 1;
+	});
 </script>
 
 <div class="flex flex-col">
@@ -21,7 +28,7 @@
 		{#each $textArray as charObj (charObj)}
 			<span
 				class="transition-colors duration-500 {charObj.style}"
-				animate:charSwap
+				animate:charSwap={charSwapDuration}
 			>
 				{@html charObj.value}
 			</span>

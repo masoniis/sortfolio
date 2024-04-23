@@ -4,17 +4,20 @@ let flipper = true;
 export function charSwap(
 	node: Element,
 	{ from, to }: { from: DOMRect; to: DOMRect },
+	duration: number
 ): AnimationConfig {
 	const style = getComputedStyle(node);
 	const transform = style.transform === "none" ? "" : style.transform;
-	const [ox, oy] = style.transformOrigin.split(" ").map(parseFloat);
+	const [ox] = style.transformOrigin.split(" ").map(parseFloat);
 	const dx = from.left + (from.width * ox) / to.width - (to.left + ox);
 	// INFO: If I want to do multi-row charswaps I would need this
 	// const dy = from.top + (from.height * oy) / to.height - (to.top + oy);
 	flipper = !flipper;
 
+	console.log(duration);
+
 	return {
-		duration: 100,
+		duration: duration ? duration : 100,
 		css: (t, u) => {
 			const x = u * dx;
 			var y = -2 * Math.sin(t * Math.PI);
@@ -25,7 +28,10 @@ export function charSwap(
 			const sx = t + (u * from.width) / to.width;
 			const sy = t + (u * from.height) / to.height;
 
-			return `transform: ${transform} translate(${x}px, ${y}vw) scale(${sx}, ${sy});`;
+			return `
+				transform: ${transform} translate(${x}px, ${y}vw) scale(${sx}, ${sy});
+				background-clip: border-box;
+			`;
 		},
 	} as AnimationConfig;
 }
