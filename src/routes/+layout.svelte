@@ -39,10 +39,7 @@
 
 <svelte:window bind:scrollY on:mousemove={handleMouseMove} />
 
-<div
-	id="beast"
-	class="selection:bg-primaryaccentbg selection:text-primaryaccentfg"
->
+<div class="selection:bg-primaryaccentbg/20 selection:text-primaryfg">
 	<div class="aura" style={auraStyle}></div>
 	<!-- <Navbar /> -->
 	<slot class="z-10" />
@@ -67,10 +64,6 @@
 			theme(colors.primaryfg/.05) 0%,
 			transparent 50%
 		);
-	}
-
-	#beast {
-		@apply selection:bg-primaryfg selection:text-primarybg;
 	}
 
 	/* width */
