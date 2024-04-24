@@ -8,7 +8,7 @@
 	function updateCSSVariable(name: string, value: string) {
 		const root = document.documentElement;
 		value = value ? value.replace("#", "") : "#22C55D";
-
+		//
 		const rgb = value
 			.match(/.{1,2}/g)!
 			.map((x) => parseInt(x, 16))
