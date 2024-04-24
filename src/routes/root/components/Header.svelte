@@ -65,7 +65,7 @@
 	}
 
 	span.final {
-		@apply underline decoration-primaryaccentbg/80 underline-offset-1;
+		@apply underline decoration-primaryaccentbg/80 underline-offset-[3px];
 	}
 
 	span.bogo {
@@ -77,18 +77,18 @@
 	}
 
 	span.pivot {
-		@apply underline decoration-yellow-500 underline-offset-1;
+		@apply underline decoration-yellow-500 underline-offset-[3px];
 	}
 
 	span.lbound {
-		@apply underline decoration-blue-500 underline-offset-1;
+		@apply underline decoration-blue-500 underline-offset-[3px];
 	}
 
 	span.rbound {
-		@apply underline decoration-red-500 underline-offset-1;
+		@apply underline decoration-red-500 underline-offset-[3px];
 	}
 
 	span.min {
-		@apply underline decoration-primaryfg/80 underline-offset-1;
+		@apply underline decoration-primaryfg/80 underline-offset-[3px];
 	}
 </style>
