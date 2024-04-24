@@ -39,7 +39,10 @@
 
 <svelte:window bind:scrollY on:mousemove={handleMouseMove} />
 
-<div class="selection:bg-primaryaccentbg/20 selection:text-primaryfg">
+<div
+	id="selection"
+	class="selection:bg-primaryaccentbg/20 selection:text-primaryfg"
+>
 	<div class="aura" style={auraStyle}></div>
 	<!-- <Navbar /> -->
 	<slot class="z-10" />
@@ -64,6 +67,10 @@
 			theme(colors.primaryfg/.05) 0%,
 			transparent 50%
 		);
+	}
+
+	#selection *::-moz-selection {
+		@apply bg-primaryaccentbg/20 text-primaryfg;
 	}
 
 	/* width */
