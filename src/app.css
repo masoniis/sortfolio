@@ -9,10 +9,12 @@
     --color-primaryaccentbg: 34 197 94; /* tailwind green 500 */
     --color-primaryaccentfg: 24 24 27; /* tailwind zinc 900 */
 
+
     --color-secondarybg: 71 85 105;
     --color-secondaryfg: 15 23 42;
     --color-secondaryaccentbg: 24 24 27; /* tailwind zinc 900 */
     --color-secondaryaccentfg: 212 212 216; /* tailwind zinc 300 */
+
   }
 
 	html {

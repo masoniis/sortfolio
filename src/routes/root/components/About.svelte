@@ -1,12 +1,16 @@
 <script>
 	import { ArrowIcon } from "$lib/components/icons";
+	import Theme from "./Theme.svelte";
 </script>
 
 <div class="flex flex-col">
 	<h3
-		class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2 text-primaryfg"
+		class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2 text-primaryfg flex flex-row gap-4"
 	>
-		About me
+		<p>About me</p>
+		<div>
+			<Theme />
+		</div>
 	</h3>
 	<spacer class="h-4"></spacer>
 	<p>

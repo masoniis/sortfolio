@@ -14,8 +14,6 @@ export function charSwap(
 	// const dy = from.top + (from.height * oy) / to.height - (to.top + oy);
 	flipper = !flipper;
 
-	console.log(duration);
-
 	return {
 		duration: duration ? duration : 100,
 		css: (t, u) => {
