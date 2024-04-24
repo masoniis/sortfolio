@@ -4,8 +4,9 @@ Personal portfolio made with SvelteKit and TailwindCSS as well as Typescript. Im
 ## Inspiration
 VERY heavy inspiration from [brittanychiang.com](https://brittanychiang.com/)
 
-- Main site layout concept
-- Cool mouse gradient following you idea
-- Project view table design
+- No direct forking or code copying, purely design inspiration
+- Derived ideas for main site layout concept
+- Cool mouse gradient following your cursor idea
+- Project view table design and basic idea
 
 Regardless of the inspiration, nothing was copied directly, and most of the design was done entirely by me. I also decided to make some improvements that I thought fit like sorting of the table, and easily extensible theming.
