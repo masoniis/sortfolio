@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
 import { wait } from "$lib/functions/sorthelpers";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "$lib/functions/store";
+import { type CharObj, currentAlgorithm } from "$lib/functions/textStore";
 
 async function insertionSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Insertion sort'; alg.complexity = 'O(n^2)'; return alg; });

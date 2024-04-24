@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
 import { wait, shuffle, unshuffle, prestyle, isSorted } from "$lib/functions/sorthelpers";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "$lib/functions/store";
+import { type CharObj, currentAlgorithm } from "$lib/functions/textStore";
 
 async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
 	currentAlgorithm.update((alg) => { alg.name = 'Bogosort'; alg.complexity = 'O(n*n!)'; return alg; });

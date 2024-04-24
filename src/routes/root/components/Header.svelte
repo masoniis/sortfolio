@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
-	import { textArray, currentAlgorithm } from "$lib/functions/store";
+	import { textArray, currentAlgorithm } from "$lib/functions/textStore";
 	import { msInterval } from "$lib/functions/autoplay";
 	import { fade } from "svelte/transition";
 	import { autoplay } from "$lib/functions/autoplay";

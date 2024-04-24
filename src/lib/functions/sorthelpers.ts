@@ -1,6 +1,6 @@
 import { type Writable } from "svelte/store";
 import { get } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "./store";
+import { type CharObj, currentAlgorithm } from "./textStore";
 
 export function wait(delay: number) {
 	return new Promise((resolve) => {
