@@ -1,4 +1,5 @@
 import type { AnimationConfig } from "svelte/animate";
+import { wait } from "$lib/functions/sorthelpers";
 
 let flipper = true;
 export function charSwap(
@@ -7,20 +8,30 @@ export function charSwap(
 	duration: number
 ): AnimationConfig {
 	const style = getComputedStyle(node);
-	const transform = style.transform === "none" ? "" : style.transform;
+	const isCharSwapping = node.getAttribute('data-charswapping') === 'true';
+	const transform = style.transform === "none" || isCharSwapping ? "" : style.transform;
 	const [ox] = style.transformOrigin.split(" ").map(parseFloat);
 	const dx = from.left + (from.width * ox) / to.width - (to.left + ox);
-	// INFO: If I want to do multi-row charswaps I would need this
-	// const dy = from.top + (from.height * oy) / to.height - (to.top + oy);
 	flipper = !flipper;
+
+	if (!isCharSwapping) {
+		node.setAttribute('data-charswapping', 'true');
+	}
+
+	wait(duration).then(() => {
+		node.setAttribute('data-charswapping', 'false');
+	});
 
 	return {
 		duration: duration ? duration : 100,
 		css: (t, u) => {
+			if (isCharSwapping) {
+				return ''; // Return empty string if the element is currently undergoing charSwap
+			}
 			const x = u * dx;
 			var y = -2 * Math.sin(t * Math.PI);
-			if (flipper == true) {
-				y = -y
+			if (flipper) {
+				y = -y;
 			}
 
 			const sx = t + (u * from.width) / to.width;

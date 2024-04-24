@@ -19,7 +19,7 @@
 	let charSwapDuration = 100;
 
 	msInterval.subscribe((value) => {
-		charSwapDuration = value - 50 > 0 ? value - 50 : 1;
+		charSwapDuration = value - 30 > 0 ? value - 30 : 1;
 	});
 </script>
 
