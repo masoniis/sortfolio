@@ -10,3 +10,5 @@ VERY heavy inspiration from [brittanychiang.com](https://brittanychiang.com/)
 - Project view table design and basic idea
 
 Regardless of the inspiration, nothing was copied directly, and most of the design was done entirely by me. I also decided to make some improvements that I thought fit like sorting of the table, and easily extensible theming.
+
+## Other
