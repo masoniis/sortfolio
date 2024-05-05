@@ -105,6 +105,7 @@
 
 <svelte:head>
 	<title>Projects | Mason Bott</title>
+	<meta name="description" content="Mason Bott's project archive." />
 </svelte:head>
 
 <Spacer />
