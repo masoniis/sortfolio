@@ -28,13 +28,6 @@
 		type="font/ttf"
 		crossorigin="anonymous"
 	/>
-	<link
-		rel="preload"
-		as="font"
-		href="/fonts/Inter-Variable.ttf"
-		type="font/ttf"
-		crossorigin="anonymous"
-	/>
 </svelte:head>
 
 <svelte:window bind:scrollY on:mousemove={handleMouseMove} />
