@@ -12,11 +12,12 @@
 	/>
 </svelte:head>
 
+<Grid />
+
 <Spacer />
 <container
 	class="text-primaryfg min-h-screen flex flex-grow flex-col max-w-7xl mx-auto"
 >
-	<Grid />
 	<a
 		href="/"
 		class="text-dynamich6 text-primaryaccentbg group/link items-center flex flex-row"
