@@ -26,11 +26,11 @@
 	</a>
 	<h1 class="text-5xl">About me</h1>
 	<div
-		class="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between pt-8"
+		class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between pt-8"
 	>
-		<div class="flex flex-col space-y-4">
+		<div class="flex flex-col space-y-4 flex-shrin lg:mr-8">
 			<p>
-				Hello! My name is Mason and I have a passion for fascinating topics in
+				Hey! My name is Mason and I have a passion for fascinating topics in
 				computer science and math.
 			</p>
 			<p>
@@ -50,10 +50,12 @@
 				time with my friends and family.
 			</p>
 		</div>
-		<enhanced:img
-			src="/static/images/picture_1.jpg"
-			alt="Mason Bott"
-			class="aspect-auto w-48 ml-8 border-primaryaccentbg/50 border-2 shadow-primaryaccentbg"
-		/>
+		<div class="flex-shrink-0">
+			<enhanced:img
+				src="/static/images/picture_1.jpg"
+				alt="Mason Bott"
+				class="aspect-auto w-48 mt-8 lg:mt-0 border-primaryaccentbg/50 border-2 shadow-primaryaccentbg"
+			/>
+		</div>
 	</div>
 </container>
