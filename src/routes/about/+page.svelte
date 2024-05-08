@@ -50,8 +50,8 @@
 				time with my friends and family.
 			</p>
 		</div>
-		<img
-			src="images/picture_1.jpg"
+		<enhanced:img
+			src="/static/images/picture_1.jpg"
 			alt="Mason Bott"
 			class="aspect-auto w-48 ml-8 border-primaryaccentbg/50 border-2 shadow-primaryaccentbg"
 		/>
