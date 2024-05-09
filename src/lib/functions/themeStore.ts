@@ -3,7 +3,7 @@ import { browser } from "$app/environment";
 
 const accentBG = browser ? window.localStorage.colorStore : "#22C55D";
 const primaryBGDark = "#18181b";
-const primaryBGLight = "#d3d3db";
+const primaryBGLight = "#e7e7df";
 
 export var colorStore: Writable<string> = writable<string>(accentBG);
 
@@ -46,9 +46,10 @@ function calculateContrast(value1: string, value2: string) {
 }
 
 function getContrastingColor(accentColor: string) {
-  const luminance = calculateContrast(accentColor, primaryBGDark);
+  const luminanceDark = calculateContrast(accentColor, primaryBGDark);
+  const luminanceLight = calculateContrast(accentColor, primaryBGLight);
 
-  if (luminance > 0.5) return primaryBGDark; // Keep dark bg
+  if (luminanceDark > luminanceLight) return primaryBGDark; // Keep dark bg
   return primaryBGLight; // Switch to light bg
 }
 

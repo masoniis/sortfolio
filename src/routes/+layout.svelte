@@ -4,6 +4,9 @@
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
 	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+	import { onMount } from "svelte";
+	import { get } from "svelte/store";
+	import { colorStore, updateTheme } from "$lib/functions/themeStore";
 
 	inject({ mode: dev ? "development" : "production" });
 	injectSpeedInsights();
@@ -18,6 +21,14 @@
 		mouseX = e.clientX;
 		mouseY = e.clientY;
 	};
+
+	// Set theme for all pages
+	let color: string = get(colorStore) || "#22C55D";
+
+	onMount(() => {
+		updateTheme(color);
+		colorStore.set(color);
+	});
 </script>
 
 <svelte:head>
@@ -44,7 +55,7 @@
 
 <style lang="postcss">
 	:global(html) {
-		@apply bg-primarybg;
+		@apply bg-primarybg transition-colors duration-500 ease-in-out;
 	}
 
 	:global(body) {

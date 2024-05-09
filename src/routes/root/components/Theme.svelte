@@ -18,7 +18,7 @@
 </script>
 
 <div class="flex flex-row gap-2 items-center">
-	<input class="bg-primarybg" type="color" bind:value={color} />
+	<input class="bg-transparent" type="color" bind:value={color} />
 	{#if color !== "#22C55D"}
 		<button class="text-primaryfg/50 text-dynamicp" on:click={() => reset()}>
 			Reset
