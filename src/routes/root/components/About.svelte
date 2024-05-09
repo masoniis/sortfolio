@@ -8,9 +8,7 @@
 		class="text-dynamich6 font-extrabold border-primaryaccentbg/80 border-b-2 text-primaryfg flex flex-row gap-4"
 	>
 		<p>About me</p>
-		<div>
-			<Theme />
-		</div>
+		<Theme />
 	</h3>
 	<spacer class="h-4"></spacer>
 	<p>

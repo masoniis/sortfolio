@@ -21,6 +21,19 @@
 		updateCSSVariable("--color-primaryaccentbg", color);
 		colorStore.set(color);
 	});
+
+	function reset() {
+		color = "#22C55D";
+		updateCSSVariable("--color-primaryaccentbg", color);
+		colorStore.set(color);
+	}
 </script>
 
-<input class="bg-primarybg" type="color" bind:value={color} />
+<div class="flex flex-row gap-2 items-center">
+	<input class="bg-primarybg" type="color" bind:value={color} />
+	{#if color !== "#22C55D"}
+		<button class="text-primaryfg/50 text-dynamicp" on:click={() => reset()}>
+			Reset
+		</button>
+	{/if}
+</div>
