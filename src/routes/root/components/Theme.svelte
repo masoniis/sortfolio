@@ -20,8 +20,11 @@
 <div class="flex flex-row gap-2 items-center">
 	<input class="bg-transparent" type="color" bind:value={color} />
 	{#if color !== "#22C55D"}
-		<button class="text-primaryfg/50 text-dynamicp" on:click={() => reset()}>
-			Reset
+		<button
+			class="text-primaryfg/50 text-dynamicp hover:text-primaryfg/80 transition-colors duration-300 ease-in-out"
+			on:click={() => reset()}
+		>
+			Reset theme
 		</button>
 	{/if}
 </div>
