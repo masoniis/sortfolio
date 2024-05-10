@@ -18,7 +18,7 @@
 		</span>
 	</span>
 	<div
-		class="flex-1 flex flex-col pt-16 sm:pt-24 overflow-hidden text-dynamicp text-primaryfg/80 space-y-10"
+		class="flex-1 flex flex-col pt-16 sm:pt-24 overflow-hidden text-dynamicp text-primaryfg/60 space-y-10"
 	>
 		<About />
 

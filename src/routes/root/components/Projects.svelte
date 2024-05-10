@@ -21,7 +21,7 @@
 	</Card>
 	<Card
 		img="images/rush.png"
-		href="https://github.com/HammerMonkeys/sedmos"
+		href="https://github.com/masoniis/rush"
 		github="https://github.com/masoniis/rush"
 	>
 		<span slot="title">Rush</span>
@@ -36,11 +36,13 @@
 		A competition-winning website design project made for the FBLA student competition
 		in 2021.
 	</Card>
-	<a
-		href="projects"
-		class="text-primaryfg hover:text-primaryaccentbg group/link"
-	>
-		View full project archive
-		<ArrowIcon />
-	</a>
+	<p>
+		Check out my
+		<a
+			href="projects"
+			class="hover:text-primaryaccentbg text-primaryfg group/link underline underline-offset-2 decoration-primaryaccentbg hover:underline-offset-4 transition-all"
+		>
+			full project archive.
+		</a>
+	</p>
 </div>

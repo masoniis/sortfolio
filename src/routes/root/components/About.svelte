@@ -13,13 +13,12 @@
 	<spacer class="h-4"></spacer>
 	<p>
 		I'm a 2nd year in Computer Science at the University of Colorado Boulder. I
-		love to learn, discover, and create.
+		love to learn, discover, and create. Learn
 		<a
 			href="about"
-			class="hover:text-primaryaccentbg text-primaryfg group/link"
+			class="hover:text-primaryaccentbg text-primaryfg group/link underline underline-offset-2 decoration-primaryaccentbg hover:underline-offset-4 transition-all"
 		>
-			More about me
-			<ArrowIcon />
+			more about me.
 		</a>
 	</p>
 	<spacer class="h-4"></spacer>

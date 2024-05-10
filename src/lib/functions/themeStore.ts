@@ -35,6 +35,15 @@ function updateCSSVariable(name: string, value: string) {
   root.style.setProperty(name, rgb);
 }
 
+function getContrastingColor(accentColor: string) {
+  const luminanceDark = calculateContrast(accentColor, primaryBGDark);
+  const luminanceLight = calculateContrast(accentColor, primaryBGLight);
+
+  // Keep dark background if contrast is higher with the accent, otherwise switch to light.
+  if (luminanceDark + 0.1 > luminanceLight) return primaryBGDark;
+  return primaryBGLight;
+}
+
 function calculateContrast(value1: string, value2: string) {
   const color1 = value1.match(/[0-9a-fA-F]{2}/g)!.map((x) => parseInt(x, 16));
   const color2 = value2.match(/[0-9a-fA-F]{2}/g)!.map((x) => parseInt(x, 16));
@@ -43,35 +52,6 @@ function calculateContrast(value1: string, value2: string) {
   const l2 = 0.2126 * color2[0] + 0.7152 * color2[1] + 0.0722 * color2[2];
 
   return Math.abs(l1 - l2) / 255;
-}
-
-function getContrastingColor(accentColor: string) {
-  const luminanceDark = calculateContrast(accentColor, primaryBGDark);
-  const luminanceLight = calculateContrast(accentColor, primaryBGLight);
-
-  if (luminanceDark > luminanceLight) return primaryBGDark; // Keep dark bg
-  return primaryBGLight; // Switch to light bg
-}
-
-function weirdRGBtoHex(rgb: string) {
-  const values = rgb.split(" ");
-  return "#" + values.map((x) => parseInt(x).toString(16)).join("");
-}
-
-function multiplyColor(color: string, factor: number) {
-  const hexColor = color.replace("#", "");
-
-  const values = hexColor.match(/.{2}/g)!.map((hex) => parseInt(hex, 16));
-
-  const newValues = values.map((value) =>
-    Math.ceil(Math.min(255, value / factor)),
-  );
-
-  const newHexColor = newValues
-    .map((value) => value.toString(16).padStart(2, "0"))
-    .join("");
-
-  return "#" + newHexColor;
 }
 
 function hexToWeirdRGB(hex: string) {
