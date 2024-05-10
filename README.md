@@ -1,6 +1,6 @@
-# Info
-Official link: [masonbott.com](https://masonbott.com)
+**Live site:** [masonbott.com](https://masonbott.com)
 
+# Info
 A cool portfolio with a nice sorting animation on my name!
 
 **Technologies used:**
@@ -11,7 +11,7 @@ A cool portfolio with a nice sorting animation on my name!
 - AWS route53 for domain management
 
 ## Inspiration
-VERY heavy inspiration from [brittanychiang.com](https://brittanychiang.com/)
+VERY heavy design inspiration from [brittanychiang.com](https://brittanychiang.com/)
 
 - No direct forking or code copying, purely design inspiration
 - Derived ideas for main site layout concept
@@ -20,6 +20,7 @@ VERY heavy inspiration from [brittanychiang.com](https://brittanychiang.com/)
 
 ## SEO
 Optimize search results for google: https://search.google.com/search-console/
+
 Optimize search results for bing: https://www.bing.com/webmasters
 
 ## Development
