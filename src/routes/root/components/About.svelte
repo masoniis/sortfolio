@@ -1,5 +1,4 @@
 <script>
-	import { ArrowIcon } from "$lib/components/icons";
 	import Theme from "./Theme.svelte";
 </script>
 
