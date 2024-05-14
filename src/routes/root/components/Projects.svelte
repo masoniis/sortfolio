@@ -25,7 +25,7 @@
 		github="https://github.com/masoniis/rush"
 	>
 		<span slot="title">Rush</span>
-		A rudimentary shell application written in Rust.
+		A rudimentary shell written in Rust.
 	</Card>
 	<Card
 		img="images/quantumchart.png"
