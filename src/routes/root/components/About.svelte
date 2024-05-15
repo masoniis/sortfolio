@@ -23,7 +23,7 @@
 	<spacer class="h-4"></spacer>
 	<a
 		class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80 w-fit font-semibold transition-colors duration-200"
-		href="masonbott_resume.pdf"
+		href="resumes/BottMason_ResumeMay2024.pdf"
 	>
 		See resume
 	</a>
