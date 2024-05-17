@@ -9,6 +9,8 @@
 		SvelteIcon,
 		NeovimIcon,
 		GitIcon,
+		PythonIcon,
+		SQLIcon,
 	} from "$lib/components/icons";
 </script>
 
@@ -28,6 +30,8 @@
 		<JSIcon />
 		<SvelteIcon />
 		<NeovimIcon />
+		<PythonIcon />
+		<SQLIcon />
 		<GitIcon />
 	</grid>
 </div>
