@@ -9,6 +9,7 @@
 		SvelteIcon,
 		NeovimIcon,
 		GitIcon,
+		NixOSIcon,
 		PythonIcon,
 		SQLIcon,
 	} from "$lib/components/icons";
@@ -22,15 +23,16 @@
 	</h3>
 	<spacer class="h-4"></spacer>
 	<grid>
+		<PythonIcon />
 		<HTML5Icon />
-		<RustIcon />
 		<CPPIcon />
+		<RustIcon />
 		<TSIcon />
 		<CSSIcon />
 		<JSIcon />
 		<SvelteIcon />
+		<NixOSIcon />
 		<NeovimIcon />
-		<PythonIcon />
 		<SQLIcon />
 		<GitIcon />
 	</grid>

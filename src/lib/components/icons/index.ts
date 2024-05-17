@@ -9,6 +9,7 @@ export { default as SortArrowIcon } from "./SortArrow.svelte";
 export { default as RustIcon } from "./Rust.svelte";
 export { default as HTML5Icon } from "./HTML5.svelte";
 export { default as SQLIcon } from "./SQL.svelte";
+export { default as NixOSIcon } from "./NixOS.svelte";
 export { default as TSIcon } from "./TypeScript.svelte";
 export { default as JSIcon } from "./JavaScript.svelte";
 export { default as CSSIcon } from "./CSS.svelte";
