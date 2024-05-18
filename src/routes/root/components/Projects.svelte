@@ -1,6 +1,5 @@
 <script>
 	import Card from "$lib/components/Card.svelte";
-	import { ArrowIcon } from "$lib/components/icons";
 </script>
 
 <div class="flex flex-col">
