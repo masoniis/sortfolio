@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
-	import { textArray, currentAlgorithm } from "$lib/functions/store/textStore";
-	import { msInterval, autoplay } from "$lib/functions/sorting/autoplay";
+	import {
+		textArray,
+		currentAlgorithm,
+		sortInterval,
+	} from "$lib/functions/store/sortStore";
+	import { autoplay } from "$lib/functions/sorting/autoplay";
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
 	import { GithubIcon, LinkedinIcon } from "$lib/components/icons";
@@ -17,7 +21,7 @@
 
 	let charSwapDuration = 100;
 
-	msInterval.subscribe((value) => {
+	sortInterval.subscribe((value) => {
 		charSwapDuration = value - 30 > 0 ? value - 30 : 1;
 	});
 </script>

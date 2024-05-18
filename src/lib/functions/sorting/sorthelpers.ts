@@ -1,6 +1,6 @@
 import { type Writable } from "svelte/store";
 import { get } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "$lib/functions/store/textStore";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store/sortStore";
 
 /* Set the style of every element in a CharObj[] Writable */
 export function fullstyle(store: Writable<CharObj[]>, style: string) {

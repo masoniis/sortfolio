@@ -11,8 +11,7 @@ import {
   quickSort,
   selectionSort,
 } from "$lib/functions/sorting";
-import { textArray } from "$lib/functions/store/textStore";
-import { writable, type Writable } from "svelte/store";
+import { textArray, sortInterval } from "$lib/functions/store/sortStore";
 
 const sortingFunctions: Function[] = [
   bubbleSort,
@@ -21,14 +20,12 @@ const sortingFunctions: Function[] = [
   quickSort,
   selectionSort,
 ];
-// const sortingFunctions: Function[] = [bubbleSort];
+
 const length: number = sortingFunctions.length;
 let iterator: number = Math.round(Math.random() * length);
 
-export const msInterval: Writable<number> = writable<number>(175);
-
-let intervalConfig = { interval: 175 }; //INFO: This is an object because I want to pass it in as reference (kinda scuffed)
-msInterval.subscribe((value) => {
+let intervalConfig = { interval: 175 }; //INFO: This is an object because I want to pass it in as reference rather than value (a bit scuffed)
+sortInterval.subscribe((value) => {
   intervalConfig.interval = value;
   if (intervalConfig.interval < 100) {
     intervalConfig.interval = 100;

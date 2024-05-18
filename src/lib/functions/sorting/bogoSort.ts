@@ -2,7 +2,7 @@ import { get } from "svelte/store";
 import { shuffle, unshuffle, fullstyle, isSorted } from "./sorthelpers";
 import { wait } from "$lib/functions/helpers";
 import { type Writable } from "svelte/store";
-import { type CharObj, currentAlgorithm } from "$lib/functions/store/textStore";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store/sortStore";
 
 async function bogoSort(store: Writable<CharObj[]>, ms: { interval: number }) {
   currentAlgorithm.update((alg) => {

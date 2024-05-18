@@ -1,11 +1,11 @@
 <script>
 	import { get } from "svelte/store";
-	import { msInterval } from "$lib/functions/sorting/autoplay";
+	import { sortInterval } from "$lib/functions/store/sortStore";
 
 	let sortSettings = false;
 	let interval = 0;
 
-	msInterval.subscribe((value) => {
+	sortInterval.subscribe((value) => {
 		interval = value;
 	});
 </script>
@@ -22,7 +22,9 @@
 			<button
 				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-green-500 rounded-lg w-fit"
 				on:click={() => {
-					msInterval.set(get(msInterval) - 25 >= 0 ? get(msInterval) - 25 : 0);
+					sortInterval.set(
+						get(sortInterval) - 25 >= 0 ? get(sortInterval) - 25 : 0,
+					);
 				}}
 			>
 				Speed up
@@ -30,7 +32,7 @@
 			<button
 				class="mt-8 px-4 py-2 text-dynamicp text-primarybg bg-red-500 rounded-lg w-fit"
 				on:click={() => {
-					msInterval.set(get(msInterval) + 25);
+					sortInterval.set(get(sortInterval) + 25);
 				}}
 			>
 				Speed down

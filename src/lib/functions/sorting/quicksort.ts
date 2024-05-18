@@ -1,6 +1,6 @@
 import { get, type Writable } from "svelte/store";
 import { wait } from "$lib/functions/helpers";
-import { type CharObj, currentAlgorithm } from "$lib/functions/store/textStore";
+import { type CharObj, currentAlgorithm } from "$lib/functions/store/sortStore";
 
 async function quickSort(
   store: Writable<CharObj[]>,
