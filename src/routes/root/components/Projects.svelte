@@ -11,7 +11,7 @@
 	</h3>
 	<spacer class="h-4"></spacer>
 	<Card
-		img="images/sedmos.png"
+		img="images/sedmos.webp"
 		href="https://sedmos.vercel.app/"
 		github="https://github.com/HammerMonkeys/sedmos"
 	>
@@ -20,7 +20,7 @@
 		even desmos itself fails at.
 	</Card>
 	<Card
-		img="images/rush.png"
+		img="images/rush.webp"
 		href="https://github.com/masoniis/rush"
 		github="https://github.com/masoniis/rush"
 	>
@@ -28,7 +28,7 @@
 		A rudimentary shell written in Rust.
 	</Card>
 	<Card
-		img="images/quantumchart.png"
+		img="images/quantumchart.webp"
 		href="https://quantumchart.vercel.app"
 		github="https://github.com/masoniis/quantum-chart"
 	>

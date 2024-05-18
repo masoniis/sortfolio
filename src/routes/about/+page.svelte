@@ -53,7 +53,7 @@
 		</div>
 		<div class="flex-shrink-0">
 			<enhanced:img
-				src="/static/images/picture_1.jpg"
+				src="$lib/assets/portrait.jpg"
 				alt="Mason Bott"
 				class="aspect-auto w-48 mt-8 lg:mt-0 border-primaryaccentbg/50 border-2 shadow-primaryaccentbg"
 			/>
