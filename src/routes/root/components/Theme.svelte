@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { afterUpdate } from "svelte";
 	import { get } from "svelte/store";
-	import { colorStore, updateTheme } from "$lib/functions/themeStore";
+	import { colorStore, updateTheme } from "$lib/functions/store/themeStore";
 
 	let color: string = get(colorStore) || "#22C55D";
 

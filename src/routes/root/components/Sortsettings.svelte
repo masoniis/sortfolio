@@ -1,6 +1,6 @@
 <script>
 	import { get } from "svelte/store";
-	import { msInterval } from "$lib/functions/autoplay";
+	import { msInterval } from "$lib/functions/sorting/autoplay";
 
 	let sortSettings = false;
 	let interval = 0;

@@ -6,7 +6,7 @@
 	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import { onMount } from "svelte";
 	import { get } from "svelte/store";
-	import { colorStore, updateTheme } from "$lib/functions/themeStore";
+	import { colorStore, updateTheme } from "$lib/functions/store/themeStore";
 
 	inject({ mode: dev ? "development" : "production" });
 	injectSpeedInsights();

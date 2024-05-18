@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { get } from "svelte/store";
 	import { charSwap } from "$lib/functions/charSwap";
-	import { textArray, currentAlgorithm } from "$lib/functions/textStore";
-	import { msInterval } from "$lib/functions/autoplay";
+	import { textArray, currentAlgorithm } from "$lib/functions/store/textStore";
+	import { msInterval, autoplay } from "$lib/functions/sorting/autoplay";
 	import { fade } from "svelte/transition";
-	import { autoplay } from "$lib/functions/autoplay";
 	import { onMount } from "svelte";
 	import { GithubIcon, LinkedinIcon } from "$lib/components/icons";
 	import Sortsettings from "./Sortsettings.svelte";
