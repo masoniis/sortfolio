@@ -16,7 +16,7 @@
 	>
 		<span slot="title">Sedmos</span>
 		A desmos-like graphing calculator with the ability to graph vector fields, something
-		even desmos itself fails at.
+		even desmos falls short of.
 	</Card>
 	<Card
 		img="images/rush.webp"
@@ -32,7 +32,7 @@
 		github="https://github.com/masoniis/quantum-chart"
 	>
 		<span slot="title">Quantum Chart</span>
-		A competition-winning website design project made for the FBLA student competition
+		An award-winning website design project made for the FBLA student competition
 		in 2021.
 	</Card>
 	<p>

@@ -25,7 +25,7 @@
 		<BackArrowIcon />
 		Mason Bott
 	</a>
-	<h1 class="text-5xl">About me</h1>
+	<h1 class="text-5xl">Autobiography</h1>
 	<div
 		class="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between pt-8"
 	>
