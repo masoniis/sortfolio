@@ -48,7 +48,8 @@
 		{/if}
 	</container>
 	<p class="text-primaryfg/80 text-dynamicp sm:max-w-[70%] font-light">
-		Computer science student, software developer, and a tech enthusiast.
+		Computer science student, software developer, programmer, dedicated
+		learner...
 	</p>
 	<div class="flex flex-row space-x-2 pt-6">
 		<GithubIcon />

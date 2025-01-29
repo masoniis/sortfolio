@@ -5,82 +5,8 @@
 		BackArrowIcon,
 	} from "$lib/components/icons/index";
 	import Spacer from "$lib/components/Spacer.svelte";
-
-	interface Link {
-		title: string;
-		url: string;
-	}
-
-	interface Project {
-		title: string;
-		year: number;
-		technologies: string[];
-		links: Link[];
-	}
-
-	let projects: Project[] = [
-		{
-			title: "Sonders",
-			year: 2024,
-			technologies: ["GLSL"],
-			links: [
-				{
-					title: "Github repo",
-					url: "https://github.com/masoniis/sonders",
-				},
-			],
-		},
-		{
-			title: "Portfolio V1",
-			year: 2024,
-			technologies: ["HTML", "CSS", "TS", "Tailwind", "SvelteKit"],
-			links: [
-				{
-					title: "Live site",
-					url: "https://masonbott.com/",
-				},
-				{
-					title: "Github repo",
-					url: "https://github.com/masoniis/portfolio",
-				},
-			],
-		},
-		{
-			title: "Sedmos",
-			year: 2024,
-			technologies: ["HTML", "CSS", "TS", "Tailwind"],
-			links: [
-				{
-					title: "Live site",
-					url: "https://sedmos.vercel.app/",
-				},
-				{
-					title: "Github repo",
-					url: "https://github.com/hammermonkeys/sedmos",
-				},
-			],
-		},
-		{
-			title: "Rush",
-			year: 2023,
-			technologies: ["Rust"],
-			links: [
-				{ title: "Github repo", url: "https://github.com/masoniis/rush" },
-			],
-		},
-		{
-			title: "QuantumChart",
-			year: 2019,
-			technologies: ["HTML", "CSS", "JS"],
-			links: [
-				{ title: "Live site", url: "https://quantumchart.vercel.app/" },
-				{
-					title: "Github repo",
-					url: "https://github.com/masoniis/quantum-chart",
-				},
-			],
-		},
-	];
+	import { type Project, projectData } from "./projectData";
+	let projects: Project[] = projectData;
 
 	let curSort = ["year", "desc"];
 
@@ -92,7 +18,7 @@
 		}
 
 		if (curSort[1] === "desc") {
-			projects = projects.sort((a, b) => b.year - a.year);
+			projects = projects.sort((a: Project, b: Project) => b.year - a.year);
 		} else {
 			projects = projects.sort((a, b) => a.year - b.year);
 		}
