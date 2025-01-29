@@ -36,7 +36,7 @@ export async function autoplay() {
   await wait(1500);
   while (true) {
     shuffle(textArray);
-    await wait(500);
+    await wait(intervalConfig.interval + 100);
     await sortingFunctions[iterator++ % length](textArray, intervalConfig);
     await wait(3000);
     resetCharObjs(textArray);
