@@ -1,31 +1,32 @@
 {
-	"name": "portfolio",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev --host",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-vercel": "^5.2.0",
-		"@sveltejs/enhanced-img": "^0.2.0",
-		"@sveltejs/kit": "^2.5.5",
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.38",
-		"svelte": "^4.2.19",
-		"svelte-check": "^3.6.9",
-		"svelte-hamburgers": "^4.2.0",
-		"tailwindcss": "^3.4.3",
-		"tslib": "^2.6.2",
-		"typescript": "^5.4.4",
-		"vite": "^5.2.8"
-	},
-	"type": "module",
-	"dependencies": {
-		"@vercel/analytics": "^1.2.2",
-		"@vercel/speed-insights": "^1.0.10"
-	}
+  "name": "portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "^5.2.0",
+    "@sveltejs/enhanced-img": "^0.2.0",
+    "@sveltejs/kit": "^2.5.5",
+    "@tailwindcss/language-server": "^0.14.2",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "svelte": "^4.2.19",
+    "svelte-check": "^3.6.9",
+    "svelte-hamburgers": "^4.2.0",
+    "tailwindcss": "^3.4.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8"
+  },
+  "type": "module",
+  "dependencies": {
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10"
+  }
 }
