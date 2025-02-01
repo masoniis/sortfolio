@@ -24,5 +24,6 @@ Optimize search results for google: https://search.google.com/search-console/
 Optimize search results for bing: https://www.bing.com/webmasters
 
 ## Development
-- `npm i` to install deps
-- `npm run dev` to start dev server on local network. Remove --host flag from package.json dev script if you don't want to expose it to your network.
+- `bun i` to install deps
+- `npm dev` to start dev server on local network. Remove --host flag from package.json dev script if you don't want to expose it to your network.
+- Tailwind lsp is available in the cli via `bunx tailwindcss-language-server`
