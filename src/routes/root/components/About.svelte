@@ -22,7 +22,7 @@
 	</p>
 	<spacer class="h-4"></spacer>
 	<a
-		target="framename"
+		target="_blank"
 		href="resumes/Mason_Bott_resume.pdf"
 		class="bg-primaryaccentbg text-primaryaccentfg rounded-sm p-2 hover:bg-primaryaccentbg/80 w-fit font-semibold transition-colors duration-200"
 	>
