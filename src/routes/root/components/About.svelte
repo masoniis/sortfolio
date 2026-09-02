@@ -11,7 +11,7 @@
 	</h3>
 	<spacer class="h-4"></spacer>
 	<p>
-		I'm a 3rd year in Computer Science at the University of Colorado Boulder. I
+		I'm a Computer Science Masters student at the University of Colorado Boulder. I
 		love to learn, discover, and create. Learn
 		<a
 			href="about"
