@@ -1,6 +1,7 @@
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ url }: { url: URL }) {
-	return new Response(`
+  return new Response(
+    `
 		User-agent: *
 		Allow: /
 
@@ -28,6 +29,6 @@ export async function GET({ url }: { url: URL }) {
 		User-agent: GPTBot
 		Disallow: /
 
-		Sitemap: ${url.origin}/sitemap.xml`.trim() // Trim to remove leading whitespace
-	);
+		Sitemap: ${url.origin}/sitemap.xml`.trim(), // Trim to remove leading whitespace
+  );
 }
