@@ -71,17 +71,6 @@ export let projectData: Project[] = [
     ],
   },
   {
-    title: "Sonders",
-    year: 2024,
-    technologies: ["GLSL"],
-    links: [
-      {
-        title: "Github repo",
-        url: "https://github.com/masoniis/sonders",
-      },
-    ],
-  },
-  {
     title: "Portfolio V1",
     year: 2024,
     technologies: ["HTML", "CSS", "TS", "Tailwind", "Svelte"],
