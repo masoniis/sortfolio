@@ -11,8 +11,10 @@
 	</h3>
 	<spacer class="h-4"></spacer>
 	<p>
-		I'm a Computer Science Masters student at the University of Colorado Boulder. I
-		love to learn, discover, and create. Learn
+		I'm a Computer Science Master's student concentrating in AI at the
+		University of Colorado Boulder, where I also earned my B.A. in Computer
+		Science with a minor in Mathematics. I love to learn, discover, and create.
+		Learn
 		<a
 			href="about"
 			class="hover:text-primaryaccentbg text-primaryfg group/link underline underline-offset-2 decoration-primaryaccentbg hover:underline-offset-4 transition-all"

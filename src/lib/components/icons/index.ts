@@ -18,3 +18,7 @@ export { default as SvelteIcon } from "./Svelte.svelte";
 export { default as NeovimIcon } from "./Neovim.svelte";
 export { default as PythonIcon } from "./Python.svelte";
 export { default as GitIcon } from "./Git.svelte";
+export { default as LuaIcon } from "./Lua.svelte";
+export { default as DockerIcon } from "./Docker.svelte";
+export { default as ReactIcon } from "./React.svelte";
+export { default as PyTorchIcon } from "./PyTorch.svelte";

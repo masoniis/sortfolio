@@ -6,7 +6,7 @@
 	let lastUpdatedText = "Updated a while ago...";
 
 	onMount(() => {
-		fetch("https://api.github.com/repos/masoniis/portfolio")
+		fetch("https://api.github.com/repos/masoniis/sortfolio")
 			.then((response) => {
 				if (response.ok) {
 					return response.json();
@@ -36,7 +36,7 @@
 		</div>
 		<div class="mt-8 2xs:order-1 2xs:mt-0">
 			<p class="text-center text-xs leading-5 text-primaryfg">
-				&copy; 2024 Mason Bott
+				&copy; {new Date().getFullYear()} Mason Bott
 			</p>
 			<p class="text-center text-xs leading-5 text-primaryfg/70">
 				{lastUpdatedText}

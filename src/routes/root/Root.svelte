@@ -3,13 +3,14 @@
 	import Skills from "./components/Skills.svelte";
 	import Header from "./components/Header.svelte";
 	import About from "./components/About.svelte";
+	import Experience from "./components/Experience.svelte";
 </script>
 
 <svelte:head>
 	<title>Mason Bott</title>
 	<meta
 		name="description"
-		content="Software engineer. Passion for perfection, problem solving, and the intricasies of computers"
+		content="Mason Bott: software engineer and CS master's student (AI) at CU Boulder. Graphics, systems, and AI research."
 	/>
 </svelte:head>
 
@@ -25,6 +26,8 @@
 		class="flex-1 flex flex-col pt-16 sm:pt-24 overflow-hidden text-dynamicp text-primaryfg/60 space-y-10"
 	>
 		<About />
+
+		<Experience />
 
 		<Projects />
 

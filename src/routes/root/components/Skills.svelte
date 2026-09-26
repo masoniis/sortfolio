@@ -12,6 +12,10 @@
 		NixOSIcon,
 		PythonIcon,
 		SQLIcon,
+		LuaIcon,
+		DockerIcon,
+		ReactIcon,
+		PyTorchIcon,
 	} from "$lib/components/icons";
 </script>
 
@@ -23,18 +27,22 @@
 	</h3>
 	<spacer class="h-4"></spacer>
 	<grid>
-		<PythonIcon />
-		<HTML5Icon />
-		<CPPIcon />
 		<RustIcon />
+		<CPPIcon />
+		<PythonIcon />
 		<TSIcon />
-		<CSSIcon />
 		<JSIcon />
-		<SvelteIcon />
-		<NixOSIcon />
-		<NeovimIcon />
+		<LuaIcon />
 		<SQLIcon />
+		<NixOSIcon />
+		<SvelteIcon />
+		<ReactIcon />
+		<PyTorchIcon />
+		<HTML5Icon />
+		<CSSIcon />
+		<DockerIcon />
 		<GitIcon />
+		<NeovimIcon />
 	</grid>
 </div>
 

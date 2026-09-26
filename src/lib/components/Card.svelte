@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { ArrowIcon, GithubIcon } from "$lib/components/icons";
 
-	export let img = "https://via.placeholder.com/192x128";
+	export let img = "";
+	export let alt = "";
 	export let href = "";
 	export let github = "";
 </script>
@@ -26,11 +27,13 @@
 				<slot>Default content</slot>
 			</p>
 		</div>
-		<img
-			src={img}
-			alt="graphing calculator"
-			class="aspect-video w-40 h-24 hover:scale-105 transition-transform ease-in-out duration-200 border-[1px] border-primaryaccentbg mr-4"
-		/>
+		{#if img}
+			<img
+				src={img}
+				{alt}
+				class="aspect-video w-40 h-24 hover:scale-105 transition-transform ease-in-out duration-200 border-[1px] border-primaryaccentbg mr-4"
+			/>
+		{/if}
 	</div>
 </a>
 <spacer class="h-12"></spacer>

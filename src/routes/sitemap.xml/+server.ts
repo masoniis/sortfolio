@@ -15,19 +15,19 @@ export async function GET() {
 			<loc>${site}/</loc>
 			<changefreq>monthly</changefreq>
 			<priority>1.0</priority>
-			<description>Software engineer. Build, design, and execute professional grade software projects. Computer scientist.</description>
+			<description>Software engineer and CS master's student (AI) at CU Boulder. AI research, graphics programming, and software projects.</description>
 		</url>
 		<url>
 			<loc>${site}/about</loc>
 			<changefreq>yearly</changefreq>
 			<priority>0.2</priority>
-			<description>Hey, my name is Mason and I love to create and consume things it my free time.</description>
+			<description>Hey, my name is Mason. I love computer science, math, graphics, and AI.</description>
 		</url>
 		<url>
 			<loc>${site}/projects</loc>
 			<changefreq>monthly</changefreq>
 			<priority>0.9</priority>
-			<description>Desmos-like graphing calculator. Process management tool made in Rust. Competition winning website design and implementation.</description>
+			<description>Rust voxel game engine. Desmos-like graphing calculator. Expense splitting web app. Rust shell. Competition winning website design.</description>
 		</url>
 	</urlset>`;
 

@@ -8,7 +8,7 @@
 	<title>About | Mason Bott</title>
 	<meta
 		name="description"
-		content="Software engineer. Passion for perfection, problem solving, and the intricasies of computers"
+		content="About Mason Bott: CS master's student (AI) at CU Boulder, AI researcher, and graphics programmer."
 	/>
 </svelte:head>
 
@@ -35,20 +35,30 @@
 				computer science and math.
 			</p>
 			<p>
-				Lately, I have taken up an interest in <b>computer graphics</b>,
-				learning about the math and intricacies behind the scenes of 3D
-				rendering. Particularly, I have been learning about shaders and
-				<a
-					href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language"
-					class="hover:text-primaryaccentbg group/link font-bold"
-				>
-					GLSL
-					<ArrowIcon />
-				</a>
+				I'm currently pursuing a Master of Science in Computer Science with a
+				concentration in <b>artificial intelligence</b> at CU Boulder, after
+				finishing my B.A. in Computer Science with a minor in Mathematics in
+				December 2025. In summer 2025 I worked as a software engineering and AI
+				researcher in the Autonomous Robotics & Perception Group, where I helped
+				build an LLM reasoning agent, spatial memory and VLM data ingestion
+				pipelines, and an Android app streaming pose telemetry to a Boston
+				Dynamics Spot robot.
 			</p>
 			<p>
-				When I am not coding, I enjoy playing video games, reading, and spending
-				time with my friends and family.
+				I'm also into <b>computer graphics</b>, learning about the math and
+				intricacies behind 3D rendering. One of my favorite projects is
+				<a
+					href="https://github.com/masoniis/vantablock"
+					class="hover:text-primaryaccentbg group/link font-bold"
+				>
+					Vantablock
+					<ArrowIcon />
+				</a>, a voxel game engine written in Rust with WGPU and hand-written WGSL
+				shaders.
+			</p>
+			<p>
+				When I am not coding, I enjoy playing piano, hiking, learning
+				languages, entrepreneurship, gaming and VR, and spending time with my friends and family.
 			</p>
 		</div>
 		<div class="flex-shrink-0">
