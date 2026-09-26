@@ -7,19 +7,24 @@
 	export let github = "";
 </script>
 
-<a {href} class="group/link">
+<div class="group/link relative">
 	<div class="card">
 		<div class="flex flex-col w-full">
 			<h4 class="text-dynamich6 font-bold" style="line-height: 0.8">
 				<div
 					class="group-hover/link:text-primaryaccentbg flex sm:flex-row justify-between items-center"
 				>
-					<div class="text-primaryfg group-hover/link:text-primaryaccentbg">
+					<a
+						{href}
+						class="text-primaryfg group-hover/link:text-primaryaccentbg after:absolute after:inset-0"
+					>
 						<slot name="title">Default Title</slot>
 						<ArrowIcon />
-					</div>
+					</a>
 					{#if github}
-						<GithubIcon href={github} />
+						<span class="relative z-10">
+							<GithubIcon href={github} />
+						</span>
 					{/if}
 				</div>
 			</h4>
@@ -31,11 +36,11 @@
 			<img
 				src={img}
 				{alt}
-				class="aspect-video w-40 h-24 hover:scale-105 transition-transform ease-in-out duration-200 border-[1px] border-primaryaccentbg mr-4"
+				class="aspect-video w-40 h-24 group-hover/link:scale-105 transition-transform ease-in-out duration-200 border-[1px] border-primaryaccentbg mr-4"
 			/>
 		{/if}
 	</div>
-</a>
+</div>
 <spacer class="h-12"></spacer>
 
 <style lang="postcss">
